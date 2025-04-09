@@ -182,35 +182,51 @@ const TestimonialCard = ({ testimonial, index }) => {
 // TypewriterText component (unchanged)
 const TypewriterText = () => {
   const phrases = [
-    "Restaurant",
-    "Plumbing Business",
-    "Landscaping Business",
-    "Carwash",
-    "Salon",
-    "Law Firm",
-    "Blog",
-    "HVAC",
-    "Sneaker Shop",
-    "Cafe",
-    "Food Truck",
-    "Bakery",
-    "Gym",
-    "Bookstore",
-    "Tutoring Service",
-    "Music School",
-    "Window Cleaning",
-    "Business", // Kept this as you had it originally
+    "Restaurant.",
+    "Plumbing Business.",
+    "Landscaping Business.",
+    "Carwash.",
+    "Salon.",
+    "Law Firm.",
+    "Blog.",
+    "HVAC.",
+    "Sneaker Shop.",
+    "Cafe.",
+    "Food Truck.",
+    "Bakery.",
+    "Gym.",
+    "Bookstore.",
+    "Tutoring Service.",
+    "Music School.",
+    "Window Cleaning.",
+    "Business.", // Kept this as you had it originally
   ];
+  
+  const [shuffledPhrases, setShuffledPhrases] = useState([]);
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isPaused, setIsPaused] = useState(false); // Add this new state
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Shuffle phrases when component mounts
+  useEffect(() => {
+    const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+
+    setShuffledPhrases(shuffleArray(phrases));
+  }, []);
 
   useEffect(() => {
-    const currentPhrase = phrases[currentPhraseIndex];
-
-    // If we're paused, don't do anything
-    if (isPaused) return;
+    // If shuffledPhrases is empty or we're paused, don't do anything
+    if (shuffledPhrases.length === 0 || isPaused) return;
+    
+    const currentPhrase = shuffledPhrases[currentPhraseIndex];
 
     const timeout = setTimeout(
       () => {
@@ -233,7 +249,7 @@ const TypewriterText = () => {
           if (currentText === "") {
             setIsDeleting(false);
             setCurrentPhraseIndex(
-              (prevIndex) => (prevIndex + 1) % phrases.length
+              (prevIndex) => (prevIndex + 1) % shuffledPhrases.length
             );
           }
         }
@@ -242,7 +258,7 @@ const TypewriterText = () => {
     );
 
     return () => clearTimeout(timeout);
-  }, [currentText, currentPhraseIndex, isDeleting, isPaused]);
+  }, [currentText, currentPhraseIndex, isDeleting, isPaused, shuffledPhrases]);
 
   return (
     <motion.span

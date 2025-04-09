@@ -82,14 +82,14 @@ const Navbar = () => {
           >
           
             <img src={LogoImg} alt="" className="h-12" />
-            <span className="text-3xl font-bold text-gray-800">
+            <span className="text-2xl font-bold text-gray-800">
               NextGen<span className="text-blue-600">Websites</span>
             </span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <div className="bg-gray-100 rounded-full p-1 flex items-center shadow-inner text-[22px]">
+            <div className="bg-gray-100 rounded-full p-1 flex items-center shadow-inner text-[19px]">
               {navLinks.map((link, index) => {
                 const isActive = link.href === "/" 
                   ? activePage === "home" 
@@ -130,7 +130,7 @@ const Navbar = () => {
           <div className="hidden md:block relative">
             <a href="/contact" >
               <motion.button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition flex items-center gap-2 text-2xl"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition flex items-center gap-2 text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
