@@ -128,7 +128,7 @@ const Navbar = () => {
 
           {/* CTA Button with Dropdown */}
           <div className="hidden md:block relative">
-            <a href="/contact" >
+            <a href="tel:+15551234567" >
               <motion.button
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition flex items-center gap-2 text-xl"
                 initial={{ opacity: 0 }}

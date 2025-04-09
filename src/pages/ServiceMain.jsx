@@ -90,94 +90,96 @@ const ServiceCard = ({ service }) => {
           hover: {
             opacity: 1,
             scale: 1.5,
-            transition: { duration: 0.4 }
-          }
+            transition: { duration: 0.4 },
+          },
         }}
         className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 z-0"
       />
-      
+
       <div className="flex flex-col items-center text-center relative z-10">
         {/* Icon container with enhanced animations */}
         <motion.div
           variants={{
-            hover: { 
-              scale: 1.15, 
+            hover: {
+              scale: 1.15,
               rotate: 5,
               boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.5)",
-              transition: { duration: 0.3 }
-            }
+              transition: { duration: 0.3 },
+            },
           }}
           className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white"
         >
           {/* Icon with its own animation */}
           <motion.div
             variants={{
-              hover: { 
+              hover: {
                 scale: 1.2,
-                transition: { 
+                transition: {
                   duration: 0.2,
                   delay: 0.1,
                   type: "spring",
-                  stiffness: 400
-                }
-              }
+                  stiffness: 400,
+                },
+              },
             }}
           >
             {service.icon}
           </motion.div>
         </motion.div>
-        
+
         {/* Title with animation */}
         <motion.h3
           variants={{
-            hover: { 
+            hover: {
               scale: 1.05,
               color: "#1E40AF", // dark blue
-              transition: { duration: 0.3 }
-            }
+              transition: { duration: 0.3 },
+            },
           }}
           className="text-xl font-bold mb-3 text-gray-800"
         >
           {service.title}
         </motion.h3>
-        
+
         {/* Description with subtle animation */}
         <motion.p
           variants={{
-            hover: { 
+            hover: {
               y: -5,
-              transition: { duration: 0.4 }
-            }
+              transition: { duration: 0.4 },
+            },
           }}
           className="text-gray-600 mb-6"
         >
           {service.description}
         </motion.p>
-        
+
         {/* Adding a "Learn More" button that appears on hover */}
+        <a href="/pricing">
         <motion.button
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 0, y: 20 },
-            hover: { 
-              opacity: 1, 
+            hover: {
+              opacity: 1,
               y: 0,
-              transition: { duration: 0.3, delay: 0.1 }
-            }
+              transition: { duration: 0.3, delay: 0.1 },
+            },
           }}
           className="px-5 py-2 bg-blue-600 text-white rounded-full font-medium text-sm hover:bg-blue-700"
         >
           Get Started
         </motion.button>
+        </a>
       </div>
-      
+
       {/* Animated border effect */}
       <motion.div
         variants={{
           hover: {
             opacity: 1,
-            transition: { duration: 0.3 }
-          }
+            transition: { duration: 0.3 },
+          },
         }}
         className="absolute inset-0 border-2 border-blue-400 rounded-lg opacity-0"
       />
@@ -282,20 +284,7 @@ const ServiceMain = () => {
                 thrive in the digital world.
               </p>
               <div className="flex flex-wrap gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-all duration-300"
-                >
-                  Get Started
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
-                >
-                  Learn More
-                </motion.button>
+                
               </div>
             </motion.div>
 
@@ -385,13 +374,15 @@ const ServiceMain = () => {
                     innovative solutions.
                   </p>
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 shadow-lg"
-                >
-                  Contact Us Today
-                </motion.button>
+                <a href="tel:+15551234567">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 shadow-lg"
+                  >
+                    Contact Us Today
+                  </motion.button>
+                </a>
               </div>
             </div>
           </ScrollReveal>
