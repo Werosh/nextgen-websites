@@ -201,22 +201,31 @@ const TypewriterText = () => {
     "Window Cleaning",
     "Business", // Kept this as you had it originally
   ];
-
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false); // Add this new state
 
   useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
+
+    // If we're paused, don't do anything
+    if (isPaused) return;
 
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
           setCurrentText(currentPhrase.substring(0, currentText.length + 1));
 
+          // When typing is complete
           if (currentText === currentPhrase) {
-            setIsDeleting(true);
-            setTimeout(() => {}, 1500); // Wait before deleting
+            setIsPaused(true); // Set to paused instead of deleting immediately
+
+            // After delay, start deleting
+            setTimeout(() => {
+              setIsPaused(false);
+              setIsDeleting(true);
+            }, 1000); // 1 seconds pause
           }
         } else {
           setCurrentText(currentPhrase.substring(0, currentText.length - 1));
@@ -233,7 +242,7 @@ const TypewriterText = () => {
     );
 
     return () => clearTimeout(timeout);
-  }, [currentText, currentPhraseIndex, isDeleting]);
+  }, [currentText, currentPhraseIndex, isDeleting, isPaused]);
 
   return (
     <motion.span
@@ -323,7 +332,7 @@ const LandingPage = () => {
       {/* Hero Section with Typewriter and Angular Geometric Background */}
       <section
         id="home"
-        className="relative bg-gradient-to-b from-blue-50 to-white min-h-screen flex items-center overflow-hidden"
+        className="relative bg-gradient-to-b from-blue-50 to-white h-screen flex items-center overflow-hidden"
       >
         {/* Unique Angular Background Art Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -380,7 +389,9 @@ const LandingPage = () => {
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 relative">
                   Build a website for your <br />
-                  <TypewriterText />
+                  <div className="h-12 md:h-14 lg:h-16 flex items-center">
+                    <TypewriterText />
+                  </div>
                 </h1>
                 <span className="absolute -right-4 bottom-0 text-5xl text-blue-200">
                   "
@@ -443,9 +454,9 @@ const LandingPage = () => {
       </section>
 
       {/* Services Preview */}
-      <section id="services" className="bg-white py-20">
+      <section id="services" className="bg-white mb-20 ">
         <div className="container mx-auto px-6">
-          <ScrollReveal direction="up" className="text-center mb-16">
+          <ScrollReveal direction="up" className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Our Services
             </h2>

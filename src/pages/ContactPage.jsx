@@ -345,7 +345,7 @@ const ContactPage = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Let's <span className="text-yellow-300">Connect</span>
               </h1>
-              <p className="text-lg md:text-xl font-bold mt-15  opacity-90 text-gray-900">
+              <p className="text-lg md:text-xl font-bold mt-15 opacity-90 text-gray-900">
                 We'd love to hear from you! Get in touch with our team for any
                 questions, feedback, or project inquiries.
               </p>
@@ -369,10 +369,10 @@ const ContactPage = () => {
         </motion.div>
       </section>
 
-      {/* Contact Info Section */}
-      <section id="contact-info" className="py-20">
+      {/* Combined Contact Section - Info Boxes and Form Side by Side */}
+      <section className=" bg-white">
         <div className="container mx-auto px-6">
-          <ScrollReveal direction="up" className="text-center mb-16">
+          <ScrollReveal direction="up" className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Get In Touch
             </h2>
@@ -383,241 +383,132 @@ const ContactPage = () => {
             </p>
           </ScrollReveal>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactInfo.map((item, index) => (
-              <ContactBox
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                content={item.content}
-                hoverColor={item.hoverColor}
-              />
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Contact Info Boxes - 2x2 Grid */}
+            <div className="lg:w-1/2">
+              <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {contactInfo.map((item, index) => (
+                  <ContactBox
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    content={item.content}
+                    hoverColor={item.hoverColor}
+                  />
+                ))}
+              </StaggerContainer>
+            </div>
 
-      {/* Contact Form Section */}
-      <section id="contact-form" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="grid md:grid-cols-5">
-                {/* Left Column - Map */}
-                <div className="md:col-span-2 bg-blue-600 text-white p-8 relative">
-                  <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-0 left-0 w-full h-full opacity-30">
-                      <div className="absolute w-full h-full border border-blue-400 transform rotate-45"></div>
-                      <div className="absolute w-full h-full border border-blue-400 transform -rotate-45"></div>
-                    </div>
-                  </div>
-
-                  <div className="relative z-10 h-full flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-6">
-                        We'd love to hear from you
-                      </h3>
-                      <p className="mb-8 text-blue-100">
-                        Fill out the form and our team will get back to you as
-                        soon as possible.
-                      </p>
-
-                      <div className="space-y-6">
-                        <div className="flex items-start">
-                          <FaMapMarkerAlt className="mt-1 mr-4 text-yellow-300" />
-                          <div>
-                            <h4 className="font-semibold">Office Location</h4>
-                            <p className="text-blue-100">
-                              123 Business Avenue, Suite 200, San Francisco, CA
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-start">
-                          <FaPhoneAlt className="mt-1 mr-4 text-yellow-300" />
-                          <div>
-                            <h4 className="font-semibold">Call Us</h4>
-                            <p className="text-blue-100">(555) 123-4567</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-start">
-                          <FaEnvelope className="mt-1 mr-4 text-yellow-300" />
-                          <div>
-                            <h4 className="font-semibold">Email Us</h4>
-                            <p className="text-blue-100">hello@company.com</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-10">
-                      <h4 className="font-semibold mb-4">Connect with us</h4>
-                      <div className="flex space-x-4">
-                        <a
-                          href="#"
-                          className="bg-blue-700 hover:bg-blue-800 p-2 rounded-full transition-colors"
-                        >
-                          <FaLinkedin />
-                        </a>
-                        <a
-                          href="#"
-                          className="bg-blue-700 hover:bg-blue-800 p-2 rounded-full transition-colors"
-                        >
-                          <FaTwitter />
-                        </a>
-                        <a
-                          href="#"
-                          className="bg-blue-700 hover:bg-blue-800 p-2 rounded-full transition-colors"
-                        >
-                          <FaFacebook />
-                        </a>
-                        <a
-                          href="#"
-                          className="bg-blue-700 hover:bg-blue-800 p-2 rounded-full transition-colors"
-                        >
-                          <FaInstagram />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+            {/* Contact Form */}
+            <div className="lg:w-1/2">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-blue-600 text-white p-8">
+                  <h3 className="text-2xl font-bold mb-4">Send us a Message</h3>
+                  <p className="text-blue-100">
+                    Fill out the form and our team will get back to you as soon
+                    as possible.
+                  </p>
                 </div>
 
-                {/* Right Column - Form */}
-                <div className="md:col-span-3 p-8 md:p-12">
-                  <ScrollReveal direction="up">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-8">
-                      Send us a Message
-                    </h3>
-
-                    <form onSubmit={handleSubmit}>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <FormField
-                          label="First Name"
-                          name="firstName"
-                          placeholder="John"
-                          required
-                        />
-                        <FormField
-                          label="Last Name"
-                          name="lastName"
-                          placeholder="Doe"
-                          required
-                        />
-                      </div>
-
+                <div className="p-8">
+                  <form onSubmit={handleSubmit}>
+                    <div className="grid md:grid-cols-2 gap-6">
                       <FormField
-                        label="Email Address"
-                        type="email"
-                        name="email"
-                        placeholder="john@example.com"
+                        label="First Name"
+                        name="firstName"
+                        placeholder="John"
                         required
                       />
-
                       <FormField
-                        label="Phone Number"
-                        type="tel"
-                        name="phone"
-                        placeholder="(555) 123-4567"
-                      />
-
-                      <div className="mb-6">
-                        <label className="block text-gray-700 font-medium mb-2">
-                          How can we help you?
-                        </label>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                          {[
-                            "General Inquiry",
-                            "Technical Support",
-                            "Quote Request",
-                            "Other",
-                          ].map((option, idx) => (
-                            <div key={idx} className="flex items-center">
-                              <input
-                                type="radio"
-                                id={`option-${idx}`}
-                                name="helpType"
-                                className="mr-2"
-                              />
-                              <label
-                                htmlFor={`option-${idx}`}
-                                className="text-gray-600 text-sm"
-                              >
-                                {option}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <FormField
-                        label="Your Message"
-                        name="message"
-                        placeholder="Please tell us how we can help you..."
+                        label="Last Name"
+                        name="lastName"
+                        placeholder="Doe"
                         required
-                        textarea
                       />
+                    </div>
 
-                      <motion.button
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
-                        disabled={formStatus === "sending"}
-                      >
-                        {formStatus === "sending" ? (
-                          <>
-                            <svg
-                              className="animate-spin h-5 w-5 mr-2"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                              ></circle>
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              ></path>
-                            </svg>
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            Send Message <FaArrowRight />
-                          </>
-                        )}
-                      </motion.button>
+                    <FormField
+                      label="Email Address"
+                      type="email"
+                      name="email"
+                      placeholder="john@example.com"
+                      required
+                    />
 
-                      {formStatus === "success" && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg flex items-center"
-                        >
+                    <FormField
+                      label="Phone Number"
+                      type="tel"
+                      name="phone"
+                      placeholder="(555) 123-4567"
+                    />
+
+                    <FormField
+                      label="Your Message"
+                      name="message"
+                      placeholder="Please tell us how we can help you..."
+                      required
+                      textarea
+                    />
+
+                    <motion.button
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                      disabled={formStatus === "sending"}
+                    >
+                      {formStatus === "sending" ? (
+                        <>
                           <svg
-                            className="w-5 h-5 mr-2"
-                            fill="none"
-                            stroke="currentColor"
+                            className="animate-spin h-5 w-5 mr-2"
                             viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
                             <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             ></path>
                           </svg>
-                          Thank you! Your message has been sent successfully.
-                        </motion.div>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message <FaArrowRight />
+                        </>
                       )}
-                    </form>
-                  </ScrollReveal>
+                    </motion.button>
+
+                    {formStatus === "success" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg flex items-center"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M5 13l4 4L19 7"
+                          ></path>
+                        </svg>
+                        Thank you! Your message has been sent successfully.
+                      </motion.div>
+                    )}
+                  </form>
                 </div>
               </div>
             </div>
@@ -826,7 +717,6 @@ const ContactPage = () => {
                   >
                     <FaPhoneAlt /> Call Now
                   </motion.a>
-                 
                 </div>
               </div>
             </div>
