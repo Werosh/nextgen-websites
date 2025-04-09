@@ -13,6 +13,7 @@ const App = () => {
       <div>
         <Navbar />
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<LandingPage />} />
           <Route path="/services" element={<ServiceMain />} />
           <Route path="/pricing" element={<PricingMain />} />
