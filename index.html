@@ -1,13 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="./src/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="author" content="NextGen Websites" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Default tags that will be overridden by React Helmet -->
     <title>NextGen Websites</title>
+    <meta
+      name="description"
+      content="Professional web development services for businesses of all sizes."
+    />
+    <!-- Preconnect to important third-party domains to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Structured data for organization - this will help with Google Knowledge Graph -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "NextGen Websites",
+        "description": "Professional web development services for businesses of all sizes.",
+        "url": "https://yourwebsitedomain.com",
+        "logo": "https://yourwebsitedomain.com/src/images/logo.png",
+        "sameAs": [
+          "https://facebook.com/yourcompany",
+          "https://twitter.com/yourcompany",
+          "https://linkedin.com/company/yourcompany"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Your Street Address",
+          "addressLocality": "Your City",
+          "addressRegion": "Your State/Region",
+          "postalCode": "Your Postal Code",
+          "addressCountry": "Your Country"
+        },
+        "telephone": "+1-234-567-8901",
+        "email": "contact@yourwebsitedomain.com"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Add a noscript message for users with JavaScript disabled -->
+    <noscript>
+      <div style="text-align: center; padding: 20px">
+        You need to enable JavaScript to run this app. Please enable JavaScript
+        to continue.
+      </div>
+    </noscript>
   </body>
 </html>

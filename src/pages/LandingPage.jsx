@@ -18,6 +18,9 @@ import {
 import WebDevImg from "../images/next-gen-back.png";
 import TeamImg from "../images/team.jpg";
 
+import SEO from '../components/SEO';
+
+
 // Enhanced animation components
 const ScrollReveal = ({
   children,
@@ -344,6 +347,15 @@ const LandingPage = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0.5]);
 
   return (
+    <>
+    <SEO 
+        title="NextGen Websites | Top Web Development Agency"
+        description="Transform your online presence with our expert web development services. Modern, responsive websites that drive business growth."
+        keywords="web agency, professional websites, React development, responsive design, SEO-friendly websites"
+        canonicalUrl="/"
+      />
+    
+    
     <div className="bg-white text-gray-800 overflow-hidden">
       {/* Hero Section with Typewriter and Angular Geometric Background */}
       <section
@@ -591,6 +603,8 @@ const LandingPage = () => {
         </div>
       </section>
     </div>
+    </>
+    
   );
 };
 
