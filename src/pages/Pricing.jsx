@@ -570,7 +570,6 @@ const PricingMain = () => {
         { text: "Custom domain", included: true },
         { text: "Responsive layout", included: true },
         { text: "Fast-loading optimisation", included: true },
-        { text: "FIRST MONTH FREE", included: true },
         { text: "Social media integration", included: false },
         { text: "Contact form + maps", included: false },
         { text: "Modern animations", included: false },
@@ -594,7 +593,6 @@ const PricingMain = () => {
         { text: "Image gallery or portfolio", included: true },
         { text: "SEO optimization", included: true },
         { text: "Call to action button", included: true },
-        { text: "FIRST MONTH FREE", included: true },
       ],
     },
     {
@@ -613,7 +611,6 @@ const PricingMain = () => {
         { text: "Email subscription setup", included: true },
         { text: "Custom admin dashboard", included: true },
         { text: "Performance optimization", included: true },
-        { text: "FIRST MONTH FREE", included: true },
       ],
     },
     {
@@ -634,7 +631,6 @@ const PricingMain = () => {
         { text: "Discount & coupon system", included: true },
         { text: "Order tracking system", included: true },
         { text: "Abandoned cart recovery", included: true },
-        { text: "FIRST MONTH FREE", included: true },
       ],
     },
   ];
