@@ -185,10 +185,10 @@ const PriceBadge = ({ oldPrice, newPrice }) => {
   return (
     <div className="flex items-center justify-center mb-2">
       <div className="bg-red-50 px-3 py-1 rounded-full">
-        <span className="text-red-500 font-medium line-through mr-2">
+        <span className="text-red-500 font-medium line-through mr-2 text-2xl">
           {oldPrice}
         </span>
-        <span className="text-green-600 font-bold">{newPrice}</span>
+        
       </div>
     </div>
   );
@@ -819,8 +819,7 @@ const PricingMain = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Choose the perfect plan for your business needs. All plans
-                include our award-winning web design and development services.
+              We understand that starting a website can feel overwhelming and EXPENSIVE. That’s why we keep our prices simple, affordable, and fair. Choose the perfect plan for your business needs.
               </p>
             </ScrollReveal>
 

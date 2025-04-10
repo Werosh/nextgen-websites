@@ -283,11 +283,11 @@ const ServiceMain = () => {
                 transition={{ duration: 0.8 }}
                 className="md:w-1/2 mb-10 md:mb-0"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 mt-10">
                   Transform Your{" "}
                   <span className="text-yellow-300">Digital Presence</span>
                 </h1>
-                <p className="text-lg md:text-xl mb-8 opacity-90">
+                <p className="text-lg md:text-xl font-semibold  opacity-90 text-black">
                   We provide innovative solutions that help businesses grow and
                   thrive in the digital world.
                 </p>
@@ -343,7 +343,7 @@ const ServiceMain = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="bg-white py-20">
+        <section id="services" className="bg-white py-0">
           <div className="container mx-auto px-6">
             <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
