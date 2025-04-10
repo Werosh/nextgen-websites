@@ -201,7 +201,7 @@ const ServiceMain = () => {
       id: "development",
       title: "Website Development",
       description:
-        "Modern, high-performance websites built with the latest technologies to meet your business needs.",
+        "Modern, high-performance websites built with the latest technologies and full custom stack coded solutions to meet your business needs",
       icon: <FaCode size={24} />,
     },
     {
