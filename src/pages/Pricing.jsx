@@ -569,7 +569,7 @@ const PricingMain = () => {
         { text: "Custom designed single page", included: true },
         { text: "Custom domain", included: true },
         { text: "Responsive layout", included: true },
-        { text: "Fast-loading optimisation", included: true },
+        { text: "Fast-loading optimization", included: true },
         { text: "Social media integration", included: false },
         { text: "Contact form + maps", included: false },
         { text: "Modern animations", included: false },
