@@ -673,8 +673,7 @@ const PricingMain = () => {
   ];
 
   return (
-    <>
-      import {Helmet} from 'react-helmet'; // In your PricingMain component:
+    <> 
       <Helmet>
         {/* Basic Meta Tags */}
         <title>
@@ -1148,14 +1147,14 @@ const PricingMain = () => {
                   </div>
                 </div>
                 <p className="text-xl md:text-2xl font-medium text-gray-700 italic max-w-4xl mx-auto mb-8">
-                  "We were quoted $15,000 by other web developers for our
+                  "We were quoted $5,000 by other web developers for our
                   business site. With this service, we got a beautiful custom
                   website for just $75/month with all the features we needed
                   plus ongoing support. The value is incredible!"
                 </p>
                 <div>
-                  <h4 className="font-bold text-gray-800">Michael Chen</h4>
-                  <p className="text-gray-500">E-commerce Entrepreneur</p>
+                  <h4 className="font-bold text-gray-800">Eddy Li</h4>
+                  <p className="text-gray-500">Owner of Sparkling Car Care</p>
                 </div>
               </div>
             </ScrollReveal>
