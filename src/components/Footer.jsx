@@ -96,8 +96,8 @@ const Footer = () => {
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
             <p className="text-blue-100 mb-6">
-              We create stunning websites that drive results for businesses of all sizes.
-              Our team blends creativity with technical expertise to deliver exceptional digital experiences.
+              We create stunning websites at a fraction of the cost that drive results for businesses of all sizes.
+              Check out our socials!
             </p>
             
             {/* Social Media Icons */}
@@ -150,11 +150,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-blue-300 mr-3" />
-                <span className="text-blue-100">(123) 456-7890</span>
+                <span className="text-blue-100">0467 561 550</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-blue-300 mr-3" />
-                <span className="text-blue-100">info@nextgenwebsites.com</span>
+                <span className="text-blue-100">info@nextgenwebsites.com.au</span>
               </li>
             </ul>
           </ScrollReveal>

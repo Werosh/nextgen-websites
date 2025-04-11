@@ -257,10 +257,10 @@ const ContactPage = () => {
       content: (
         <div className="space-y-2">
           <p>
-            <strong>Phone:</strong> (555) 123-4567
+            <strong>Phone:</strong> 0467 561 550
           </p>
           <p>
-            <strong>Email:</strong> hello@company.com
+            <strong>Email:</strong> info@nextgenwebsites.com.au
           </p>
         </div>
       ),
@@ -271,8 +271,8 @@ const ContactPage = () => {
       title: "Business Hours",
       content: (
         <div className="space-y-2">
-          <p>Monday - Friday: 9AM - 6PM</p>
-          <p>Saturday: 10AM - 4PM</p>
+          <p>Monday - Friday: 10AM - 5PM</p>
+          <p>Saturday: 10AM - 3PM</p>
           <p>Sunday: Closed</p>
         </div>
       ),
