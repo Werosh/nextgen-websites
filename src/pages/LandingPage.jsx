@@ -184,24 +184,18 @@ const TestimonialCard = ({ testimonial, index }) => {
 // TypewriterText component (unchanged)
 const TypewriterText = () => {
   const phrases = [
-    "Restaurant.",
-    "Plumbing Business.",
-    "Landscaping Business.",
-    "Carwash.",
-    "Salon.",
-    "Law Firm.",
-    "Blog.",
-    "HVAC.",
-    "Sneaker Shop.",
-    "Cafe.",
-    "Food Truck.",
-    "Bakery.",
-    "Gym.",
-    "Bookstore.",
-    "Tutoring Service.",
-    "Music School.",
-    "Window Cleaning.",
-    "Business.", // Kept this as you had it originally
+    "Car Wash\"",
+    "Restaurant\"",
+    "Plumbing Business\"",
+    "Sneaker Shop\"",
+    "Music School\"",
+    "Online Store\"",
+    "Portfolio\"",
+    "Next Big Idea\"",
+    "Landscaping Service\"",
+    "Tutoring Company\"",
+    "Gym\"",
+  
   ];
 
   const [shuffledPhrases, setShuffledPhrases] = useState([]);
@@ -243,7 +237,7 @@ const TypewriterText = () => {
             setTimeout(() => {
               setIsPaused(false);
               setIsDeleting(true);
-            }, 1000); // 1 seconds pause
+            }, 1200); // 1.2 seconds pause
           }
         } else {
           setCurrentText(currentPhrase.substring(0, currentText.length - 1));
@@ -316,13 +310,13 @@ const LandingPage = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Restaurant Owner",
+      name: "Eddy Li",
+      role: "Car Wash Owner",
       comment:
-        "The website they designed for my restaurant not only looks stunning but has increased our online reservations by 70%. Their SEO work has put us on the map!",
+        "I honestly didn’t think I needed a website, but after NextGen set one up for me, I started getting way more bookings. It was quick, affordable, and it looks way better than I expected. Wish I did it sooner",
     },
     {
-      name: "Michael Chen",
+      name: "Shelley Zhang",
       role: "E-commerce Entrepreneur",
       comment:
         "Their team delivered a website that exceeded my expectations. The social media integration has helped us grow our following and drive sales.",
@@ -337,7 +331,7 @@ const LandingPage = () => {
       name: "David Wilson",
       role: "Landscaping Business Owner",
       comment:
-        "The maintenance service is worth every penny. Our site is always up-to-date and secure, letting me focus on my business.",
+        "The maintenance service is worth every penny. Our site is always up-to-date and secure, letting me focus on my business. They even came to site to take some photos!",
     },
   ];
 

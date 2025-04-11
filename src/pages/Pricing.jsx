@@ -136,10 +136,10 @@ const PricingToggle = ({ isYearly, setIsYearly }) => {
       >
         Yearly
       </span>
-      <div className="ml-2 px-3 py-1 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+      <div className="ml-2 px-3 py-1 bg-blue-100 text-blue-800 text-base font-semibold rounded-full">
         <div className="flex items-center gap-1">
           <FaTags className="text-blue-600" />
-          <span>Save 20%</span>
+          <span>save 20%</span>
         </div>
       </div>
     </div>
@@ -301,7 +301,7 @@ const CompetitorComparison = () => {
           </h3>
           <p className="text-gray-600 mt-2">
             See how much you save with our web development services compared to
-            industry averages
+            industry averages.
           </p>
         </div>
 
@@ -391,7 +391,7 @@ const CompetitorComparison = () => {
               subscription model eliminates the massive upfront costs typically
               charged by web development agencies. You get a professional,
               custom-built website with ongoing maintenance and updates for a
-              fraction of the cost.
+              fraction of the cost. Say no more to overpriced websites!
             </p>
           </div>
         </div>
@@ -553,84 +553,91 @@ const AnimatedLimitedOffer = () => {
   );
 };
 
+// features in plans 
 const PricingMain = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   const pricingPlans = [
     {
       name: "Single Page",
-      description: "Perfect for simple websites",
+      description: "Perfect for Simple Websites",
       monthlyPrice: "$49",
       yearlyPrice: "$470",
       oldMonthlyPrice: "$99",
       oldYearlyPrice: "$950",
       icon: <FaRocket className="text-4xl text-blue-600" />,
       features: [
-        { text: "Custom designed single page", included: true },
-        { text: "Custom domain", included: true },
-        { text: "Responsive layout", included: true },
-        { text: "Fast-loading optimization", included: true },
-        { text: "Social media integration", included: false },
-        { text: "Contact form + maps", included: false },
-        { text: "Modern animations", included: false },
-        { text: "SEO optimization", included: false },
+        { text: "Custom Designed Single Page", included: true },
+        { text: "Custom Domain", included: true },
+        { text: "Responsive Layout", included: true },
+        { text: "Fast-loading Optimisation", included: true },
+        { text: "Basic SEO Setup", included: true },
+        { text: "Social Media Integration", included: false },
+        { text: "Contact Form", included: false },
+        { text: "Google Maps and Reviews Integration", included: false },
+        { text: "Modern Animations", included: false },
+       
       ],
     },
     {
       name: "Multi Page",
-      description: "For growing businesses",
+      description: "For Growing Businesses",
       monthlyPrice: "$75",
       yearlyPrice: "$720",
       oldMonthlyPrice: "$125",
       oldYearlyPrice: "$1200",
       icon: <FaRegBuilding className="text-4xl text-yellow-400" />,
       features: [
-        { text: "Everything in Single Page", included: true },
-        { text: "3-6 custom pages", included: true },
-        { text: "Contact form + maps + reviews", included: true },
-        { text: "Modern animations", included: true },
-        { text: "Social media integration", included: true },
-        { text: "Image gallery or portfolio", included: true },
-        { text: "SEO optimization", included: true },
-        { text: "Call to action button", included: true },
+        { text: <strong>Everything in Single Page</strong>, included: true },
+        { text: "3-6 Custom Pages", included: true },
+        { text: "Contact Form with Emails", included: true },
+        { text: "Google Maps and Reviews Integrations", included: true },
+        { text: "Modern Animations", included: true },
+        { text: "Social Media Integration", included: true },
+        { text: "SEO Optimisation", included: true },
+       // { text: "Call to Action Button", included: true },
+        { text: "Booking or Calendar Integration", included: false },
+        { text: "Live Chat Integration", included: false },
       ],
     },
     {
       name: "Advanced Business",
-      description: "For larger organizations",
+      description: "For Larger Organisations",
       monthlyPrice: "$149",
       yearlyPrice: "$1,430",
       oldMonthlyPrice: "$249",
       oldYearlyPrice: "$2,390",
       icon: <FaHandshake className="text-4xl text-purple-600" />,
       features: [
-        { text: "Everything in Multi Page", included: true },
-        { text: "5-10 custom pages", included: true },
-        { text: "Booking or calendar integration", included: true },
-        { text: "Live chat integration", included: true },
-        { text: "Email subscription setup", included: true },
-        { text: "Custom admin dashboard", included: true },
-        { text: "Performance optimization", included: true },
+        { text: <strong>Everything in Multi Page</strong>, included: true },
+        { text: "5-10 Custom Pages", included: true },
+        { text: "Booking or Calendar Integration", included: true },
+        { text: "Live Chat Integration", included: true },
+        { text: "Email Subscription Setup", included: true },
+        { text: "Custom Admin Dashboard", included: true },
+        { text: "Performance Optimisation", included: true },
+        { text: "eCommerce Features", included: false },
+        { text: "Payment Gateway Setup", included: false },
       ],
     },
     {
-      name: "eCommerce",
-      description: "For online stores",
+      name: "E-Commerce",
+      description: "For Online Stores",
       monthlyPrice: "$299",
       yearlyPrice: "$2,870",
       oldMonthlyPrice: "$349",
       oldYearlyPrice: "$3,350",
       icon: <FaShoppingCart className="text-4xl text-green-600" />,
       features: [
-        { text: "Everything in Advanced Business", included: true },
-        { text: "Payment gateway setup", included: true },
-        { text: "Inventory system", included: true },
-        { text: "Shipping & tax config", included: true },
-        { text: "User account & login system", included: true },
-        { text: "Product filtering & search", included: true },
-        { text: "Discount & coupon system", included: true },
-        { text: "Order tracking system", included: true },
-        { text: "Abandoned cart recovery", included: true },
+        { text: <strong>Everything in Advanced Business</strong>, included: true },
+        { text: "Payment Gateway Setup", included: true },
+        { text: "Inventory System", included: true },
+        { text: "Shipping & Tax Config", included: true },
+        { text: "User Account & Login System", included: true },
+        { text: "Product Filtering & Search", included: true },
+        { text: "Discount & Coupon System", included: true },
+        { text: "Order Tracking System", included: true },
+        { text: "Abandoned Cart Recovery", included: true },
       ],
     },
   ];
@@ -814,7 +821,7 @@ const PricingMain = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We understand that starting a website can feel overwhelming and EXPENSIVE. That’s why we keep our prices simple, affordable, and fair. Choose the perfect plan for your business needs.
+              We understand that starting a website can feel overwhelming. That’s why we keep our prices simple, affordable, and fair. Choose the perfect plan for your business needs.
               </p>
             </ScrollReveal>
 

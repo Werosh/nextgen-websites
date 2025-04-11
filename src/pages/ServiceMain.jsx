@@ -194,7 +194,7 @@ const ServiceMain = () => {
       id: "design",
       title: "Website Design",
       description:
-        "Custom, responsive designs that reflect your brand identity and provide exceptional user experience.",
+        "We create custom, responsive designs that reflects any business brand identity and provide exceptional user experience.",
       icon: <FaLaptopCode size={24} />,
     },
     {
@@ -208,7 +208,7 @@ const ServiceMain = () => {
       id: "ecommerce",
       title: "E-Commerce Solutions",
       description:
-        "Feature-rich online stores with secure payment gateways and intuitive inventory management.",
+        "Feature-rich online stores with secure payment gateways and intuitive inventory management for all your E-Commerce needs.",
       icon: <FaShoppingCart size={24} />,
     },
     {
@@ -222,7 +222,7 @@ const ServiceMain = () => {
       id: "maintenance",
       title: "Website Maintenance",
       description:
-        "Regular updates, security monitoring, and technical support to keep your website running smoothly.",
+        "Regular updates, security monitoring, and technical support to keep your website updated and running smoothly.",
       icon: <FaTools size={24} />,
     },
     {
