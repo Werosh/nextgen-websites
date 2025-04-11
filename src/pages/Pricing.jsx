@@ -293,7 +293,7 @@ const PriceCard = ({ plan, isYearly, isPopular, index }) => {
 // Competitor Price Comparison
 const CompetitorComparison = () => {
   return (
-    <ScrollReveal direction="up" className="mt-16 mb-8">
+    <ScrollReveal direction="up" className="mt-16 ">
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="bg-gray-50 py-6 px-8 border-b border-gray-200">
           <h3 className="text-2xl font-bold text-gray-800">
@@ -853,7 +853,7 @@ const PricingMain = () => {
         </section>
 
         {/* Limited Time Offer Section */}
-        <section className="py-16 container mx-auto px-6">
+        <section className=" container mx-auto px-6">
           <ScrollReveal direction="up">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="md:col-span-1">

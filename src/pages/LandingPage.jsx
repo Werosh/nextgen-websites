@@ -274,7 +274,7 @@ const LandingPage = () => {
       icon: <FaPencilRuler className="text-blue-600 text-4xl mb-4" />,
       title: "Website Design",
       description:
-        "Beautiful, responsive designs that reflect your brand identity and engage your visitors.",
+        "Beautiful, responsive designs that showcase your brand identity, attract attention, and keep visitors engaged on any device.",
     },
     {
       icon: <FaLaptopCode className="text-blue-600 text-4xl mb-4" />,
@@ -437,11 +437,11 @@ const LandingPage = () => {
 
               <ScrollReveal direction="right" delay={0.2} className="md:w-1/2">
                 <div className="relative">
-                  <div className="bg-blue-600 rounded-3xl w-full h-64 md:h-80 lg:h-96 flex items-center justify-center transform rotate-1 shadow-xl">
+                  <div className="bg-blue-600 rounded-3xl w-full h-64 md:h-80 lg:h-86 flex items-center justify-center transform rotate-1 shadow-xl">
                     <img
                       src={WebDevImg}
                       alt="Website Design"
-                      className="rounded-lg shadow-xl scale-90 transform -rotate-2 hover:rotate-0 transition-all duration-500"
+                      className="rounded-lg shadow-xl scale-90 transform -rotate-2 hover:rotate-0 transition-all duration-500 lg:h-100 lg:w-auto "
                     />
                   </div>
                   <motion.div
@@ -503,7 +503,7 @@ const LandingPage = () => {
               </ScrollReveal>
 
               <ScrollReveal direction="right" className="md:w-1/2">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
                   About NextGen Websites
                 </h2>
                 <div className="w-20 h-1 bg-blue-600 mb-6"></div>
