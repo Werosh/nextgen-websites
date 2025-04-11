@@ -441,7 +441,7 @@ const LandingPage = () => {
                     <img
                       src={WebDevImg}
                       alt="Website Design"
-                      className="rounded-lg shadow-xl scale-90 transform -rotate-2 hover:rotate-0 transition-all duration-500 lg:h-100 lg:w-auto "
+                      className="rounded-lg xl:h-120  shadow-xl scale-90 transform -rotate-2 hover:rotate-0 transition-all duration-500 lg:h-100 lg:w-auto "
                     />
                   </div>
                   <motion.div
