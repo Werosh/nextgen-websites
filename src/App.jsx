@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import ServiceMain from './pages/ServiceMain';
 import Navbar from './components/Navbar';
 import PricingMain from './pages/Pricing';
 import Footer from './components/Footer';
 import ContactPage from './pages/ContactPage';
-import SEO from './components/SEO'; // Import the SEO component
+import PageUnderConstruction from './pages/PageUnderConstructing'; // Import the new component
+import SEO from './components/SEO';
 
 const App = () => {
   return (
@@ -25,6 +26,12 @@ const App = () => {
           <Route path="/services" element={<ServiceMain />} />
           <Route path="/pricing" element={<PricingMain />} />
           <Route path="/contact" element={<ContactPage />} />
+          
+          {/* Under construction page route */}
+          <Route path="/under-construction" element={<PageUnderConstruction />} />
+          
+          {/* Redirect all undefined routes to the under-construction page */}
+          <Route path="*" element={<Navigate to="/under-construction" replace />} />
         </Routes>
         <Footer />
       </div>
