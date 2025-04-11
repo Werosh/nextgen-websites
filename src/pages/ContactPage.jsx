@@ -11,6 +11,7 @@ import {
   FaFacebook,
   FaInstagram,
 } from "react-icons/fa";
+import { IoMdMailUnread } from "react-icons/io";
 
 // Reusable animation components
 const ScrollReveal = ({
@@ -240,31 +241,26 @@ const ContactPage = () => {
   };
 
   const contactInfo = [
-    // {
-    //   title: "Our Location",
-    //   content: (
-    //     <p>
-    //       123 Business Avenue <br />
-    //       Suite 200, Tech District <br />
-    //       San Francisco, CA 94103
-    //     </p>
-    //   ),
-    //   icon: <FaMapMarkerAlt size={24} />,
-    //   hoverColor: "blue",
-    // },
     {
-      title: "Contact Info",
+      title: "Telephone",
+      content: (
+        <p>
+          <strong>Phone:</strong> 0467 561 550
+        </p>
+      ),
+      icon: <FaPhoneAlt size={24} />,
+      hoverColor: "blue",
+    },
+    {
+      title: "E-Mail",
       content: (
         <div className="space-y-2">
-          <p>
-            <strong>Phone:</strong> 0467 561 550
-          </p>
           <p>
             <strong>Email:</strong> info@nextgenwebsites.com.au
           </p>
         </div>
       ),
-      icon: <FaPhoneAlt size={24} />,
+      icon: <IoMdMailUnread size={24} />,
       hoverColor: "green",
     },
     {
@@ -296,8 +292,9 @@ const ContactPage = () => {
             <FaTwitter size={20} />
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61574986987621"
             className="text-blue-700 hover:text-blue-900 transition-colors"
+            target="_blank"
           >
             <FaFacebook size={20} />
           </a>

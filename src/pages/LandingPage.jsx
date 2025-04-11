@@ -476,7 +476,7 @@ const LandingPage = () => {
         {/* About Section */}
         <section
           id="about"
-          className="bg-blue-50 mb-20 relative overflow-hidden"
+          className="bg-blue-50 mb-25 relative overflow-hidden py-8"
         >
           <ParallaxSection offsetMultiplier={0.1} direction="up">
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-200 rounded-full opacity-30"></div>
@@ -503,10 +503,10 @@ const LandingPage = () => {
               </ScrollReveal>
 
               <ScrollReveal direction="right" className="md:w-1/2">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-5">
                   About NextGen Websites
                 </h2>
-                <div className="w-20 h-1 bg-blue-600 mb-6"></div>
+                <div className="w-20 h-1 bg-blue-600 mb-12"></div>
                 <p className="text-lg text-gray-600 mb-6">
                   At NextGen Websites, we believe that getting online shouldn’t
                   cost a fortune. We’re passionate about helping small
@@ -546,7 +546,7 @@ const LandingPage = () => {
         </section>
 
         {/* Services Preview */}
-        <section id="services" className="bg-white mb-20 ">
+        <section id="services" className="bg-white  ">
           <div className="container mx-auto px-6">
             <ScrollReveal direction="up" className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -570,7 +570,7 @@ const LandingPage = () => {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="py-20 bg-white relative overflow-hidden"
+          className="py-25 bg-white relative overflow-hidden"
         >
           <ParallaxSection direction="down">
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-blue-50 to-transparent opacity-70"></div>
@@ -578,7 +578,7 @@ const LandingPage = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 mt-7">
                 What Our Clients Say
               </h2>
               <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>

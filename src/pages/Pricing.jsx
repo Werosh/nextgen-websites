@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 import {
   FaRocket,
@@ -188,7 +188,6 @@ const PriceBadge = ({ oldPrice, newPrice }) => {
         <span className="text-red-500 font-medium line-through mr-2 text-2xl">
           {oldPrice}
         </span>
-        
       </div>
     </div>
   );
@@ -294,7 +293,7 @@ const PriceCard = ({ plan, isYearly, isPopular, index }) => {
 const CompetitorComparison = () => {
   return (
     <ScrollReveal direction="up" className="mt-16 ">
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden container mx-auto px-6 relative z-10">
         <div className="bg-gray-50 py-6 px-8 border-b border-gray-200">
           <h3 className="text-2xl font-bold text-gray-800">
             How Our Pricing Compares
@@ -553,7 +552,7 @@ const AnimatedLimitedOffer = () => {
   );
 };
 
-// features in plans 
+// features in plans
 const PricingMain = () => {
   const [isYearly, setIsYearly] = useState(false);
 
@@ -576,7 +575,6 @@ const PricingMain = () => {
         { text: "Contact Form", included: false },
         { text: "Google Maps and Reviews Integration", included: false },
         { text: "Modern Animations", included: false },
-       
       ],
     },
     {
@@ -595,7 +593,7 @@ const PricingMain = () => {
         { text: "Modern Animations", included: true },
         { text: "Social Media Integration", included: true },
         { text: "SEO Optimisation", included: true },
-       // { text: "Call to Action Button", included: true },
+        // { text: "Call to Action Button", included: true },
         { text: "Booking or Calendar Integration", included: false },
         { text: "Live Chat Integration", included: false },
       ],
@@ -629,7 +627,10 @@ const PricingMain = () => {
       oldYearlyPrice: "$3,350",
       icon: <FaShoppingCart className="text-4xl text-green-600" />,
       features: [
-        { text: <strong>Everything in Advanced Business</strong>, included: true },
+        {
+          text: <strong>Everything in Advanced Business</strong>,
+          included: true,
+        },
         { text: "Payment Gateway Setup", included: true },
         { text: "Inventory System", included: true },
         { text: "Shipping & Tax Config", included: true },
@@ -676,7 +677,7 @@ const PricingMain = () => {
   ];
 
   return (
-    <> 
+    <>
       <Helmet>
         {/* Basic Meta Tags */}
         <title>
@@ -821,7 +822,9 @@ const PricingMain = () => {
                 </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We understand that starting a website can feel overwhelming. That’s why we keep our prices simple, affordable, and fair. Choose the perfect plan for your business needs.
+                We understand that starting a website can feel overwhelming.
+                That’s why we keep our prices simple, affordable, and fair.
+                Choose the perfect plan for your business needs.
               </p>
             </ScrollReveal>
 
@@ -846,81 +849,85 @@ const PricingMain = () => {
                 />
               ))}
             </StaggerContainer>
-
-            {/* Competitor Price Comparison */}
-            <CompetitorComparison />
           </div>
-        </section>
+          {/* CTA Section */}
+          <section className="py-16 mt-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute w-96 h-96 rounded-full bg-blue-500 opacity-20 -top-20 -right-20"></div>
+              <div className="absolute w-96 h-96 rounded-full bg-blue-700 opacity-20 -bottom-40 -left-20"></div>
+            </div>
 
-        {/* Limited Time Offer Section */}
-        <section className=" container mx-auto px-6">
-          <ScrollReveal direction="up">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="md:col-span-1">
-                <AnimatedLimitedOffer />
-              </div>
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="flex flex-col lg:flex-row items-center justify-between">
+                <ScrollReveal
+                  direction="left"
+                  className="text-white mb-10 lg:mb-0 lg:mr-10"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <FaBolt className="text-yellow-300 text-xl" />
+                    <span className="font-semibold text-yellow-300">
+                      Limited Time Offer
+                    </span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Get your first month FREE + 20% off with annual billing
+                  </h2>
+                  <p className="text-lg text-blue-100">
+                    Sign up for any annual plan today and get both your first
+                    month free and 20% off the annual price.
+                  </p>
+                </ScrollReveal>
 
-              <div className="md:col-span-2 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                  Why Pay Thousands Upfront?
-                </h2>
-
-                <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="bg-blue-100 rounded-full p-3 h-min">
-                      <FaCheck className="text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        No Massive Upfront Costs
-                      </h3>
-                      <p className="text-gray-600">
-                        Most web developers charge $5,000 to $40,000 upfront.
-                        Our subscription model spreads the cost, making
-                        professional websites accessible to all businesses.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Continuous Updates & Maintenance
-                    </h3>
-                    <p className="text-gray-600">
-                      Unlike traditional agencies that charge extra for updates,
-                      our subscription includes ongoing maintenance, security
-                      updates, and technical support.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Risk-Free First Month
-                    </h3>
-                    <p className="text-gray-600">
-                      Try any plan free for your first month with no obligation.
-                      Experience our service, see your website come to life, and
-                      only pay if you're completely satisfied.
-                    </p>
-                  </div>
-                </div>
+                <ScrollReveal direction="right" delay={0.2}>
+                  <motion.button
+                    className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-10 rounded-lg shadow-xl transition flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Start Your Free Month</span>
+                    <FaArrowRight />
+                  </motion.button>
+                </ScrollReveal>
               </div>
             </div>
-          </ScrollReveal>
-        </section>
+          </section>
 
+          {/* Testimonial Banner */}
+          <section className="py-15 mt-10 bg-gray-50">
+            <div className="container mx-auto px-6">
+              <ScrollReveal direction="up">
+                <div className="text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar
+                          key={i}
+                          className="text-yellow-400 text-xl mx-1"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-xl md:text-2xl font-medium text-gray-700 italic max-w-4xl mx-auto mb-8">
+                    "We were quoted $5,000 by other web developers for our
+                    business site. With this service, we got a beautiful custom
+                    website for just $75/month with all the features we needed
+                    plus ongoing support. The value is incredible!"
+                  </p>
+                  <div>
+                    <h4 className="font-bold text-gray-800">Eddy Li</h4>
+                    <p className="text-gray-500">Owner of Sparkling Car Care</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+
+          {/* Competitor Price Comparison */}
+          <CompetitorComparison />
+        </section>
         {/* Features Comparison */}
-        <section className="py-20 bg-gray-50">
+        <section className=" bg-gray-50">
           <div className="container mx-auto px-6">
             <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -1070,6 +1077,73 @@ const PricingMain = () => {
           </div>
         </section>
 
+        {/* Limited Time Offer Section */}
+        <section className=" container mx-auto px-6 py-20 mt-15">
+          <ScrollReveal direction="up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-1">
+                <AnimatedLimitedOffer />
+              </div>
+
+              <div className="md:col-span-2 flex flex-col justify-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                  Why Pay Thousands Upfront?
+                </h2>
+
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <div className="bg-blue-100 rounded-full p-3 h-min">
+                      <FaCheck className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        No Massive Upfront Costs
+                      </h3>
+                      <p className="text-gray-600">
+                        Most web developers charge $5,000 to $40,000 upfront.
+                        Our subscription model spreads the cost, making
+                        professional websites accessible to all businesses.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="bg-blue-100 rounded-full p-3 h-min">
+                    <FaCheck className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      Continuous Updates & Maintenance
+                    </h3>
+                    <p className="text-gray-600">
+                      Unlike traditional agencies that charge extra for updates,
+                      our subscription includes ongoing maintenance, security
+                      updates, and technical support.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="bg-blue-100 rounded-full p-3 h-min">
+                    <FaCheck className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      Risk-Free First Month
+                    </h3>
+                    <p className="text-gray-600">
+                      Try any plan free for your first month with no obligation.
+                      Experience our service, see your website come to life, and
+                      only pay if you're completely satisfied.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+
         {/* FAQ Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-6 max-w-4xl">
@@ -1088,79 +1162,6 @@ const PricingMain = () => {
                 <FAQ key={index} question={faq.question} answer={faq.answer} />
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute w-96 h-96 rounded-full bg-blue-500 opacity-20 -top-20 -right-20"></div>
-            <div className="absolute w-96 h-96 rounded-full bg-blue-700 opacity-20 -bottom-40 -left-20"></div>
-          </div>
-
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
-              <ScrollReveal
-                direction="left"
-                className="text-white mb-10 lg:mb-0 lg:mr-10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <FaBolt className="text-yellow-300 text-xl" />
-                  <span className="font-semibold text-yellow-300">
-                    Limited Time Offer
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Get your first month FREE + 20% off with annual billing
-                </h2>
-                <p className="text-lg text-blue-100">
-                  Sign up for any annual plan today and get both your first
-                  month free and 20% off the annual price.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.2}>
-                <motion.button
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-10 rounded-lg shadow-xl transition flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Start Your Free Month</span>
-                  <FaArrowRight />
-                </motion.button>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonial Banner */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <ScrollReveal direction="up">
-              <div className="text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar
-                        key={i}
-                        className="text-yellow-400 text-xl mx-1"
-                      />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-xl md:text-2xl font-medium text-gray-700 italic max-w-4xl mx-auto mb-8">
-                  "We were quoted $5,000 by other web developers for our
-                  business site. With this service, we got a beautiful custom
-                  website for just $75/month with all the features we needed
-                  plus ongoing support. The value is incredible!"
-                </p>
-                <div>
-                  <h4 className="font-bold text-gray-800">Eddy Li</h4>
-                  <p className="text-gray-500">Owner of Sparkling Car Care</p>
-                </div>
-              </div>
-            </ScrollReveal>
           </div>
         </section>
 

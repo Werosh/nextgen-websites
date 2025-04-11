@@ -91,22 +91,26 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
+      <div className="container mx-auto px-6  relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <ScrollReveal direction="up" delay={0.1} className="flex flex-col">
-            <h3 className="text-xl font-bold mb-6 relative">
+            <h3 className="text-2xl font-bold mb-6 relative">
               NextGen Websites
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
-            <p className="text-blue-100 mb-6">
+            <p className="text-blue-100 text-xl mb-6">
               We create stunning websites at a fraction of the cost that drive
               results for businesses of all sizes. Check out our socials!
             </p>
 
             {/* Social Media Icons */}
             <div className="flex space-x-3 mt-auto">
-              <SocialIcon icon={<FaFacebookF />} href="https://facebook.com" />
+              <SocialIcon
+                icon={<FaFacebookF />}
+                href="https://www.facebook.com/profile.php?id=61574986987621"
+                target="_blank"
+              />
               <SocialIcon icon={<FaTwitter />} href="https://twitter.com" />
               <SocialIcon icon={<FaInstagram />} href="https://instagram.com" />
               <SocialIcon icon={<FaLinkedinIn />} href="https://linkedin.com" />
@@ -115,8 +119,12 @@ const Footer = () => {
           </ScrollReveal>
 
           {/* Quick Links */}
-          <ScrollReveal direction="up" delay={0.2} className="flex flex-col">
-            <h3 className="text-xl font-bold mb-6 relative">
+          <ScrollReveal
+            direction="up"
+            delay={0.2}
+            className="flex flex-col ml-15"
+          >
+            <h3 className="text-2xl font-bold mb-6 relative">
               Quick Links
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
@@ -132,7 +140,7 @@ const Footer = () => {
                 <li key={index}>
                   <motion.a
                     href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-blue-100 hover:text-white flex items-center"
+                    className="text-blue-100 text-xl hover:text-white flex items-center"
                     whileHover={{ x: 5 }}
                   >
                     <motion.span
@@ -148,11 +156,11 @@ const Footer = () => {
 
           {/* Contact Info */}
           <ScrollReveal direction="up" delay={0.3} className="flex flex-col">
-            <h3 className="text-xl font-bold mb-6 relative">
+            <h3 className="text-2xl font-bold mb-6 relative">
               Contact Us
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-xl">
               <li className="flex items-center">
                 <FaPhone className="text-blue-300 mr-3" />
                 <span className="text-blue-100">0467 561 550</span>
