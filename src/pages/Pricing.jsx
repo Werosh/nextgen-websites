@@ -451,106 +451,7 @@ const FAQ = ({ question, answer }) => {
   );
 };
 
-// Animated Limited Time Offer Component
-const AnimatedLimitedOffer = () => {
-  const floatControls = useAnimation();
-  const pulseControls = useAnimation();
 
-  useEffect(() => {
-    // Floating animation
-    floatControls.start({
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    });
-
-    // Pulse/glow animation
-    pulseControls.start({
-      boxShadow: [
-        "0 0 0 0 rgba(249, 115, 22, 0.4)",
-        "0 0 0 15px rgba(249, 115, 22, 0)",
-        "0 0 0 0 rgba(249, 115, 22, 0)",
-      ],
-      scale: [1, 1.05, 1],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "loop",
-      },
-    });
-  }, [floatControls, pulseControls]);
-
-  return (
-    <motion.div
-      className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-6 rounded-xl relative overflow-hidden"
-      animate={floatControls}
-      style={{ perspective: "1000px" }}
-    >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl"
-        animate={pulseControls}
-      />
-
-      <div className="relative z-10">
-        <div className="flex items-center justify-center gap-2 mb-3">
-          <FaBolt className="text-white text-2xl" />
-          <h3 className="text-2xl font-bold uppercase">Limited Time Offer</h3>
-          <FaBolt className="text-white text-2xl" />
-        </div>
-
-        <motion.div
-          className="text-center mb-4"
-          animate={{
-            rotate: [0, 2, 0, -2, 0],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            repeatType: "loop",
-          }}
-        >
-          <p className="text-xl md:text-2xl font-bold">
-            Get FIRST MONTH FREE on any plan!
-          </p>
-        </motion.div>
-
-        <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
-          <ul className="space-y-2">
-            <li className="flex items-center">
-              <FaCheck className="text-white mr-2" />
-              <span>No setup fees or hidden costs</span>
-            </li>
-            <li className="flex items-center">
-              <FaCheck className="text-white mr-2" />
-              <span>Cancel anytime - no long-term contract</span>
-            </li>
-            <li className="flex items-center">
-              <FaCheck className="text-white mr-2" />
-              <span>Full features included in free month</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className="mt-4 text-center">
-          <a href="/contact">
-            <motion.button
-              className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 px-8 rounded-lg shadow-lg transition flex items-center justify-center gap-2 mx-auto"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Claim Free Month Now</span>
-              <FaArrowRight />
-            </motion.button>
-          </a>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
 
 // features in plans
 const PricingMain = () => {
@@ -850,84 +751,12 @@ const PricingMain = () => {
               ))}
             </StaggerContainer>
           </div>
-          {/* CTA Section */}
-          <section className="py-16 mt-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute w-96 h-96 rounded-full bg-blue-500 opacity-20 -top-20 -right-20"></div>
-              <div className="absolute w-96 h-96 rounded-full bg-blue-700 opacity-20 -bottom-40 -left-20"></div>
-            </div>
-
-            <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col lg:flex-row items-center justify-between">
-                <ScrollReveal
-                  direction="left"
-                  className="text-white mb-10 lg:mb-0 lg:mr-10"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <FaBolt className="text-yellow-300 text-xl" />
-                    <span className="font-semibold text-yellow-300">
-                      Limited Time Offer
-                    </span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Get your first month FREE + 20% off with annual billing
-                  </h2>
-                  <p className="text-lg text-blue-100">
-                    Sign up for any annual plan today and get both your first
-                    month free and 20% off the annual price.
-                  </p>
-                </ScrollReveal>
-
-                <ScrollReveal direction="right" delay={0.2}>
-                  <motion.button
-                    className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-10 rounded-lg shadow-xl transition flex items-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span>Start Your Free Month</span>
-                    <FaArrowRight />
-                  </motion.button>
-                </ScrollReveal>
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonial Banner */}
-          <section className="py-15 mt-10 bg-gray-50">
-            <div className="container mx-auto px-6">
-              <ScrollReveal direction="up">
-                <div className="text-center">
-                  <div className="flex justify-center mb-6">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <FaStar
-                          key={i}
-                          className="text-yellow-400 text-xl mx-1"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-xl md:text-2xl font-medium text-gray-700 italic max-w-4xl mx-auto mb-8">
-                    "We were quoted $5,000 by other web developers for our
-                    business site. With this service, we got a beautiful custom
-                    website for just $75/month with all the features we needed
-                    plus ongoing support. The value is incredible!"
-                  </p>
-                  <div>
-                    <h4 className="font-bold text-gray-800">Eddy Li</h4>
-                    <p className="text-gray-500">Owner of Sparkling Car Care</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </section>
 
           {/* Competitor Price Comparison */}
           <CompetitorComparison />
-        </section>
-        {/* Features Comparison */}
-        <section className=" bg-gray-50">
+
+           {/* Features Comparison */}
+        <section className=" bg-gray-50 py-20">
           <div className="container mx-auto px-6">
             <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -978,7 +807,7 @@ const PricingMain = () => {
                       "Image Gallery",
                       "Booking Integration",
                       "E-commerce Functionality",
-                      "First Month Free",
+                    
                     ].map((feature, i) => (
                       <tr
                         key={i}
@@ -1049,12 +878,7 @@ const PricingMain = () => {
                               <FaTimes className="text-gray-400 mx-auto" />,
                               "Full Store",
                             ],
-                            "First Month Free": [
-                              <FaCheck className="text-green-500 mx-auto" />,
-                              <FaCheck className="text-green-500 mx-auto" />,
-                              <FaCheck className="text-green-500 mx-auto" />,
-                              <FaCheck className="text-green-500 mx-auto" />,
-                            ],
+                          
                           };
 
                           return (
@@ -1077,72 +901,82 @@ const PricingMain = () => {
           </div>
         </section>
 
-        {/* Limited Time Offer Section */}
-        <section className=" container mx-auto px-6 py-20 mt-15">
-          <ScrollReveal direction="up">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="md:col-span-1">
-                <AnimatedLimitedOffer />
-              </div>
-
-              <div className="md:col-span-2 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
-                  Why Pay Thousands Upfront?
-                </h2>
-
-                <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="bg-blue-100 rounded-full p-3 h-min">
-                      <FaCheck className="text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        No Massive Upfront Costs
-                      </h3>
-                      <p className="text-gray-600">
-                        Most web developers charge $5,000 to $40,000 upfront.
-                        Our subscription model spreads the cost, making
-                        professional websites accessible to all businesses.
-                      </p>
+          {/* Testimonial Banner */}
+          <section className="py-15 mt-10 bg-gray-50">
+            <div className="container mx-auto px-6">
+              <ScrollReveal direction="up">
+                <div className="text-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar
+                          key={i}
+                          className="text-yellow-400 text-xl mx-1"
+                        />
+                      ))}
                     </div>
                   </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
-                  </div>
+                  <p className="text-xl md:text-2xl font-medium text-gray-700 italic max-w-4xl mx-auto mb-8">
+                    "We were quoted $5,000 by other web developers for our
+                    business site. With this service, we got a beautiful custom
+                    website for just $75/month with all the features we needed
+                    plus ongoing support. The value is incredible!"
+                  </p>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Continuous Updates & Maintenance
-                    </h3>
-                    <p className="text-gray-600">
-                      Unlike traditional agencies that charge extra for updates,
-                      our subscription includes ongoing maintenance, security
-                      updates, and technical support.
-                    </p>
+                    <h4 className="font-bold text-gray-800">Eddy Li</h4>
+                    <p className="text-gray-500">Owner of Sparkling Car Care</p>
                   </div>
                 </div>
+              </ScrollReveal>
+            </div>
+          </section>
 
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
+          {/* CTA Section */}
+          <section className="py-16 mt-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute w-96 h-96 rounded-full bg-blue-500 opacity-20 -top-20 -right-20"></div>
+              <div className="absolute w-96 h-96 rounded-full bg-blue-700 opacity-20 -bottom-40 -left-20"></div>
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="flex flex-col lg:flex-row items-center justify-between">
+                <ScrollReveal
+                  direction="left"
+                  className="text-white mb-10 lg:mb-0 lg:mr-10"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <FaBolt className="text-yellow-300 text-xl" />
+                    <span className="font-semibold text-yellow-300">
+                      Limited Time Offer
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Risk-Free First Month
-                    </h3>
-                    <p className="text-gray-600">
-                      Try any plan free for your first month with no obligation.
-                      Experience our service, see your website come to life, and
-                      only pay if you're completely satisfied.
-                    </p>
-                  </div>
-                </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Get your first month FREE + 20% off with annual billing
+                  </h2>
+                  <p className="text-lg text-blue-100">
+                    Sign up for any annual plan today and get both your first
+                    month free and 20% off the annual price.
+                  </p>
+                </ScrollReveal>
+
+                <ScrollReveal direction="right" delay={0.2}>
+                  <motion.button
+                    className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-10 rounded-lg shadow-xl transition flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Start Your Free Month</span>
+                    <FaArrowRight />
+                  </motion.button>
+                </ScrollReveal>
               </div>
             </div>
-          </ScrollReveal>
+          </section>
         </section>
+       
+
+       
 
         {/* FAQ Section */}
         <section className="py-20 bg-white">

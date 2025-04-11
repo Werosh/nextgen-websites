@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {
-  FaPalette,
+  FaBolt,
   FaCode,
   FaShoppingCart,
   FaSearch,
   FaTools,
+  FaCheck,
   FaShareAlt,
+  FaArrowRight,
 } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import SEO from "../components/SEO";
 
 // Reusable components
@@ -46,6 +48,107 @@ const ScrollReveal = ({
       className={className}
     >
       {children}
+    </motion.div>
+  );
+};
+
+// Animated Limited Time Offer Component
+const AnimatedLimitedOffer = () => {
+  const floatControls = useAnimation();
+  const pulseControls = useAnimation();
+
+  useEffect(() => {
+    // Floating animation
+    floatControls.start({
+      y: [0, -10, 0],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    });
+
+    // Pulse/glow animation
+    pulseControls.start({
+      boxShadow: [
+        "0 0 0 0 rgba(249, 115, 22, 0.4)",
+        "0 0 0 15px rgba(249, 115, 22, 0)",
+        "0 0 0 0 rgba(249, 115, 22, 0)",
+      ],
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "loop",
+      },
+    });
+  }, [floatControls, pulseControls]);
+
+  return (
+    <motion.div
+      className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-6 rounded-xl relative overflow-hidden"
+      animate={floatControls}
+      style={{ perspective: "1000px" }}
+    >
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl"
+        animate={pulseControls}
+      />
+
+      <div className="relative z-10">
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <FaBolt className="text-white text-2xl" />
+          <h3 className="text-2xl font-bold uppercase">Limited Time Offer</h3>
+          <FaBolt className="text-white text-2xl" />
+        </div>
+
+        <motion.div
+          className="text-center mb-4"
+          animate={{
+            rotate: [0, 2, 0, -2, 0],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <p className="text-xl md:text-2xl font-bold">
+            Get FIRST MONTH FREE on any plan!
+          </p>
+        </motion.div>
+
+        <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+          <ul className="space-y-2">
+            <li className="flex items-center">
+              <FaCheck className="text-white mr-2" />
+              <span>No setup fees or hidden costs</span>
+            </li>
+            <li className="flex items-center">
+              <FaCheck className="text-white mr-2" />
+              <span>Cancel anytime - no long-term contract</span>
+            </li>
+            <li className="flex items-center">
+              <FaCheck className="text-white mr-2" />
+              <span>Full features included in free month</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-4 text-center">
+          <a href="/contact">
+            <motion.button
+              className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 px-8 rounded-lg shadow-lg transition flex items-center justify-center gap-2 mx-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Claim Free Month Now</span>
+              <FaArrowRight />
+            </motion.button>
+          </a>
+        </div>
+      </div>
     </motion.div>
   );
 };
@@ -234,6 +337,34 @@ const ServiceMain = () => {
     },
   ];
 
+  // Real client testimonials
+  const testimonials = [
+    {
+      name: "Eddy Li",
+      role: "Car Wash Owner",
+      comment:
+        "I honestly didn't think I needed a website, but after NextGen set one up for me, I started getting way more bookings. It was quick, affordable, and it looks way better than I expected. Wish I did it sooner",
+    },
+    {
+      name: "Shelley Zhang",
+      role: "E-commerce Entrepreneur",
+      comment:
+        "Their team delivered a website that exceeded my expectations. The social media integration has helped us grow our following and drive sales.",
+    },
+    {
+      name: "Rebecca Torres",
+      role: "Law Firm Partner",
+      comment:
+        "Professional, responsive, and detail-oriented. Our new website has significantly improved our client acquisition process.",
+    },
+    {
+      name: "David Wilson",
+      role: "Landscaping Business Owner",
+      comment:
+        "The maintenance service is worth every penny. Our site is always up-to-date and secure, letting me focus on my business. They even came to site to take some photos!",
+    },
+  ];
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -364,6 +495,73 @@ const ServiceMain = () => {
           </div>
         </section>
 
+        {/* Limited Time Offer Section */}
+        <section className=" container mx-auto px-6 py-20 mt-15">
+          <ScrollReveal direction="up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-1">
+                <AnimatedLimitedOffer />
+              </div>
+
+              <div className="md:col-span-2 flex flex-col justify-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                  Why Pay Thousands Upfront?
+                </h2>
+
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <div className="bg-blue-100 rounded-full p-3 h-min">
+                      <FaCheck className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        No Massive Upfront Costs
+                      </h3>
+                      <p className="text-gray-600">
+                        Most web developers charge $5,000 to $40,000 upfront.
+                        Our subscription model spreads the cost, making
+                        professional websites accessible to all businesses.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="bg-blue-100 rounded-full p-3 h-min">
+                    <FaCheck className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      Continuous Updates & Maintenance
+                    </h3>
+                    <p className="text-gray-600">
+                      Unlike traditional agencies that charge extra for updates,
+                      our subscription includes ongoing maintenance, security
+                      updates, and technical support.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="bg-blue-100 rounded-full p-3 h-min">
+                    <FaCheck className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      Risk-Free First Month
+                    </h3>
+                    <p className="text-gray-600">
+                      Try any plan free for your first month with no obligation.
+                      Experience our service, see your website come to life, and
+                      only pay if you're completely satisfied.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+
         {/* Call to Action */}
         <section className="bg-gray-50 py-20">
           <div className="container mx-auto px-6">
@@ -397,7 +595,7 @@ const ServiceMain = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Testimonials - Updated with real reviews */}
         <section className="bg-white py-20">
           <div className="container mx-auto px-6">
             <ScrollReveal direction="up" className="text-center mb-16">
@@ -411,10 +609,10 @@ const ServiceMain = () => {
               </p>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <ScrollReveal key={item} direction="up" delay={item * 0.1}>
-                  <div className="bg-gray-50 p-8 rounded-lg border border-gray-100 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <ScrollReveal key={index} direction="up" delay={index * 0.1}>
+                  <div className="bg-gray-50 p-8 rounded-lg border border-gray-100 shadow-sm h-full flex flex-col">
                     <div className="flex items-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <svg
@@ -426,24 +624,59 @@ const ServiceMain = () => {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-6">
-                      "The team delivered an exceptional website that perfectly
-                      captured our brand identity. Their attention to detail and
-                      technical expertise exceeded our expectations."
+                    <p className="text-gray-600 italic mb-6 flex-grow">
+                      "{testimonial.comment}"
                     </p>
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                    <div className="flex items-center mt-auto">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                        {testimonial.name.charAt(0)}
+                      </div>
                       <div>
                         <h4 className="font-medium text-gray-800">
-                          Client {item}
+                          {testimonial.name}
                         </h4>
-                        <p className="text-gray-500 text-sm">Company {item}</p>
+                        <p className="text-gray-500 text-sm">
+                          {testimonial.role}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Google Reviews Button */}
+        <section className="bg-white py-12">
+          <div className="container mx-auto px-6">
+            <ScrollReveal direction="up">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  See What Others Are Saying
+                </h3>
+                <motion.a
+                  href="https://maps.app.goo.gl/YxoTgWAeP6mu23Gn9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 48 48"
+                    fill="#fff"
+                  >
+                    <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 10.5V16h-4v-4h-2v4h-4v-4h-2v4h-4v2h4v4h-4v2h4v4h2v-4h4v4h2v-4h4v-2h-4v-4h4v-2h-4v-4h4v-1.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                    <path d="M22 16v4h4v-4h-4zm0 6v4h4v-4h-4z" />
+                  </svg>
+                  See Our Google Reviews
+                </motion.a>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       </div>
