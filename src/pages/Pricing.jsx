@@ -551,29 +551,31 @@ const PricingMain = () => {
         "Instead of charging large upfront fees, we use a subscription model that spreads the cost over time. This makes professional web development accessible to businesses of all sizes while ensuring you get ongoing maintenance, updates, and support included in your monthly fee.",
     },
     {
-      question: "What does 'first month free' include?",
+      question: "Is there a lock-in period for monthly plans?",
       answer:
-        "Your first month of service is completely free with no obligation. This includes all the features of your chosen plan, allowing you to experience our service without risk. After the first month, regular billing will begin unless you decide to cancel.",
+        "Yes, there is a minimum commitment of 3 months for monthly plans. This helps us keep pricing low while still delivering high-quality service and support.",
+
     },
-    {
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept all major credit cards including Visa, MasterCard, and American Express. We also accept PayPal and bank transfers for annual subscriptions.",
-    },
+    
+      {
+        question: "Can I request updates or changes later?",
+        answer:
+          "Absolutely. All of our plans include ongoing support and minor updates — like changing text, swapping images, or updating contact info. For larger changes such as adding new pages or advanced features, we can provide a custom quote or recommend upgrading to a higher plan.",
+      },
     {
       question: "Can I switch between plans later?",
       answer:
         "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll be prorated for the remainder of your billing cycle. When downgrading, changes will take effect at the start of your next billing cycle.",
     },
     {
-      question: "Is there a setup fee?",
+      question: "How long does it take to launch my website?",
       answer:
-        "No, there are no setup fees for any of our plans. The price you see is the total you'll pay.",
+        "Most websites are completed within 7–14 business days, depending on the plan and how quickly you provide content and feedback.",
     },
     {
-      question: "Do you offer custom solutions beyond these plans?",
+      question: "Do you offer custom solutions and specific features beyond these plans?",
       answer:
-        "Absolutely! If you have specific requirements that aren't covered by our standard plans, we'd be happy to provide a custom quote. Contact our sales team for more information.",
+        "Absolutely! If you have specific requirements that aren't covered by our standard plans, we'd be happy to provide a custom quote. Contact our team for more information.",
     },
   ];
 
@@ -952,11 +954,11 @@ const PricingMain = () => {
                     </span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Get your first month FREE + 20% off with annual billing
+                    Get Our Lowest Prices +  20% OFF With Annual Billing
                   </h2>
                   <p className="text-lg text-blue-100">
-                    Sign up for any annual plan today and get both your first
-                    month free and 20% off the annual price.
+                    Sign up for any annual plan today and get both our low price
+                    and 20% off the annual price. DOUBLE WHAMMY!
                   </p>
                 </ScrollReveal>
 
@@ -966,7 +968,7 @@ const PricingMain = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span>Start Your Free Month</span>
+                    <span>Claim Now</span>
                     <FaArrowRight />
                   </motion.button>
                 </ScrollReveal>
@@ -979,7 +981,7 @@ const PricingMain = () => {
        
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
+        <section className="pt-3 pb-20 bg-white">
           <div className="container mx-auto px-6 max-w-4xl">
             <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

@@ -522,8 +522,8 @@ const LandingPage = () => {
 
                 <StaggerContainer className="grid grid-cols-2 gap-6">
                   {[
-                    { number: "200+", label: "Projects Completed" },
-                    { number: "50+", label: "Happy Clients" },
+                    { number: "50+", label: "Projects Completed" },
+                    { number: "100%", label: "Customer Satisfaction" },
                     { number: "5+", label: "Years Experience" },
                     { number: "24/7", label: "Customer Support" },
                   ].map((stat, index) => (

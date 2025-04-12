@@ -99,7 +99,7 @@ const Footer = () => {
               NextGen Websites
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
-            <p className="text-blue-100 text-xl mb-6">
+            <p className="text-blue-100 text-[1.125rem] mb-6">
               We create stunning websites at a fraction of the cost that drive
               results for businesses of all sizes. Check out our socials!
             </p>
@@ -160,7 +160,7 @@ const Footer = () => {
               Contact Us
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-blue-400 mt-1"></div>
             </h3>
-            <ul className="space-y-4 text-xl">
+            <ul className="space-y-4 text-[1.125rem]">
               <li className="flex items-center">
                 <FaPhone className="text-blue-300 mr-3" />
                 <span className="text-blue-100">0467 561 550</span>

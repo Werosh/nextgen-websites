@@ -245,7 +245,7 @@ const ContactPage = () => {
       title: "Telephone",
       content: (
         <p>
-          <strong>Phone:</strong> 0467 561 550
+          0467 561 550
         </p>
       ),
       icon: <FaPhoneAlt size={24} />,
@@ -256,7 +256,7 @@ const ContactPage = () => {
       content: (
         <div className="space-y-2">
           <p>
-            <strong>Email:</strong> info@nextgenwebsites.com.au
+            info@nextgenwebsites.com.au
           </p>
         </div>
       ),
@@ -538,7 +538,7 @@ const ContactPage = () => {
                 {
                   question: "Do you work with international clients?",
                   answer:
-                    "Yes, we proudly serve clients worldwide. Our team can accommodate different time zones for meetings and project collaboration.",
+                    "Yes, we proudly serve clients worldwide. Our team based in Australia can accommodate different time zones for meetings and project collaboration.",
                 },
                 {
                   question:
