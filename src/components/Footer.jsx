@@ -168,13 +168,18 @@ const Footer = () => {
               <li className="flex items-center">
                 <FaEnvelope className="text-blue-300 mr-3" />
                 <span className="text-blue-100">
-                  info@nextgenwebsites.com.au
+                  contact@nextgenwebsites.info
                 </span>
               </li>
 
               <li className="mt-4">
                 <p className="text-blue-100">
-                  Business Hours: Mon-Fri 9am-5pm AEST
+                  Business Hours: 
+                  Monday - Friday: 10AM - 5PM
+
+                  Saturday: 10AM - 3PM
+
+                  Sunday: Closed
                 </p>
               </li>
             </ul>

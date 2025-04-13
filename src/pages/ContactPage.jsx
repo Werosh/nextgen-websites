@@ -256,7 +256,7 @@ const ContactPage = () => {
       content: (
         <div className="space-y-2">
           <p>
-            info@nextgenwebsites.com.au
+            contact@nextgenwebsites.info
           </p>
         </div>
       ),
