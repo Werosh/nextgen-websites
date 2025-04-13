@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -12,6 +12,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { IoMdMailUnread } from "react-icons/io";
+import emailjs from "@emailjs/browser";
 
 // Reusable animation components
 const ScrollReveal = ({
@@ -191,6 +192,8 @@ const FormField = ({
   name,
   required = false,
   textarea = false,
+  value,
+  onChange,
 }) => {
   return (
     <div className="mb-6">
@@ -204,6 +207,8 @@ const FormField = ({
           rows="4"
           placeholder={placeholder}
           required={required}
+          value={value}
+          onChange={onChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white"
         />
       ) : (
@@ -213,6 +218,8 @@ const FormField = ({
           name={name}
           placeholder={placeholder}
           required={required}
+          value={value}
+          onChange={onChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white"
         />
       )}
@@ -221,33 +228,70 @@ const FormField = ({
 };
 
 const ContactPage = () => {
+  // Initialize EmailJS
+  useEffect(() => {
+    // Replace with your actual EmailJS User ID
+    emailjs.init("YOUR_USER_ID");
+  }, []);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
   const [formStatus, setFormStatus] = useState(null);
+  const [formError, setFormError] = useState(null);
+  const form = useRef();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     setFormStatus("sending");
+    setFormError(null);
 
-    setTimeout(() => {
-      setFormStatus("success");
-      // Reset form
-      e.target.reset();
+    // Replace these parameters with your actual EmailJS service ID and template ID
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current)
+      .then((result) => {
+        console.log("Email successfully sent!", result.text);
+        setFormStatus("success");
 
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setFormStatus(null);
-      }, 3000);
-    }, 1500);
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+
+        // Reset status after 3 seconds
+        setTimeout(() => {
+          setFormStatus(null);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setFormStatus("error");
+        setFormError("Failed to send your message. Please try again later.");
+      });
   };
 
   const contactInfo = [
     {
       title: "Telephone",
-      content: (
-        <p>
-          0467 561 550
-        </p>
-      ),
+      content: <p>0467 561 550</p>,
       icon: <FaPhoneAlt size={24} />,
       hoverColor: "blue",
     },
@@ -255,9 +299,7 @@ const ContactPage = () => {
       title: "E-Mail",
       content: (
         <div className="space-y-2">
-          <p>
-            contact@nextgenwebsites.info
-          </p>
+          <p>contact@nextgenwebsites.info</p>
         </div>
       ),
       icon: <IoMdMailUnread size={24} />,
@@ -367,7 +409,7 @@ const ContactPage = () => {
       </section>
 
       {/* Combined Contact Section - Info Boxes and Form Side by Side */}
-      <section className=" bg-white">
+      <section className="bg-white">
         <div className="container mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -408,19 +450,23 @@ const ContactPage = () => {
                 </div>
 
                 <div className="p-8">
-                  <form onSubmit={handleSubmit}>
+                  <form ref={form} onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <FormField
                         label="First Name"
                         name="firstName"
                         placeholder="John"
                         required
+                        value={formData.firstName}
+                        onChange={handleChange}
                       />
                       <FormField
                         label="Last Name"
                         name="lastName"
                         placeholder="Doe"
                         required
+                        value={formData.lastName}
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -430,6 +476,8 @@ const ContactPage = () => {
                       name="email"
                       placeholder="john@example.com"
                       required
+                      value={formData.email}
+                      onChange={handleChange}
                     />
 
                     <FormField
@@ -437,6 +485,8 @@ const ContactPage = () => {
                       type="tel"
                       name="phone"
                       placeholder="(555) 123-4567"
+                      value={formData.phone}
+                      onChange={handleChange}
                     />
 
                     <FormField
@@ -445,6 +495,8 @@ const ContactPage = () => {
                       placeholder="Please tell us how we can help you..."
                       required
                       textarea
+                      value={formData.message}
+                      onChange={handleChange}
                     />
 
                     <motion.button
@@ -452,6 +504,7 @@ const ContactPage = () => {
                       whileTap={{ scale: 0.97 }}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
                       disabled={formStatus === "sending"}
+                      type="submit"
                     >
                       {formStatus === "sending" ? (
                         <>
@@ -503,6 +556,30 @@ const ContactPage = () => {
                           ></path>
                         </svg>
                         Thank you! Your message has been sent successfully.
+                      </motion.div>
+                    )}
+
+                    {formStatus === "error" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-4 p-3 bg-red-100 text-red-700 rounded-lg flex items-center"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          ></path>
+                        </svg>
+                        {formError || "Something went wrong. Please try again."}
                       </motion.div>
                     )}
                   </form>
@@ -587,7 +664,7 @@ const ContactPage = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.a
-                    href="tel:+15551234567"
+                    href="tel:0467561550"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-4 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
