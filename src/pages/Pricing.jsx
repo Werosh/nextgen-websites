@@ -582,97 +582,298 @@ const PricingMain = () => {
   return (
     <>
       <Helmet>
-        {/* Basic Meta Tags */}
-        <title>
-          Website Pricing Plans | NextGen Websites | Affordable Web Development
-        </title>
-        <meta
-          name="description"
-          content="Choose from our affordable website pricing plans starting from $49/month. No upfront costs - get professional web development with our subscription model. First month free!"
-        />
-        <meta
-          name="keywords"
-          content="website pricing, web development plans, affordable websites, subscription web design, no upfront costs, web agency pricing, professional website packages"
-        />
+              {/* Primary Meta Tags */}
+      <title>Affordable Website Pricing Plans | Starting at $49/month | NextGen Websites</title>
+      <meta
+        name="description"
+        content="Get a professional website with no upfront costs - our affordable pricing plans start from just $49/month. Save up to 95% compared to traditional web agencies. First month free!"
+      />
+      <meta
+        name="keywords"
+        content="website pricing, affordable web development, custom website plans, web design subscription, monthly website payment, business website pricing, ecommerce website cost, web design packages, professional web development, no upfront website cost"
+      />
 
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.nextgenwebsites.info/pricing" />
+      {/* Canonical URL */}
+      <link rel="canonical" href="https://www.nextgenwebsites.info/pricing" />
 
-        {/* Open Graph Meta Tags */}
-        <meta
-          property="og:title"
-          content="Website Pricing Plans | NextGen Websites"
-        />
-        <meta
-          property="og:description"
-          content="Affordable website pricing plans with no upfront costs. Professional web development starting at $49/month with your first month free."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.nextgenwebsites.info/pricing"
-        />
-        <meta
-          property="og:image"
-          content="https://www.nextgenwebsites.info/src/images/logo.png"
-        />
-        <meta property="og:site_name" content="NextGen Websites" />
+      {/* Language and Direction */}
+      <html lang="en" />
 
-       
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.nextgenwebsites.info/pricing" />
+      <meta property="og:title" content="Website Pricing Plans | Save Up to 95% | NextGen Websites" />
+      <meta property="og:description" content="Professional website development starting at $49/month with no upfront costs. Choose from Single Page, Multi Page, Advanced Business, or E-Commerce plans." />
+      <meta property="og:image" content="https://www.nextgenwebsites.info/images/pricing-page-preview.jpg" />
+      <meta property="og:site_name" content="NextGen Websites" />
+      <meta property="og:locale" content="en_US" />
 
-        {/* Structured Data (Schema.org) */}
-        <script type="application/ld+json">
-          {`
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Website Pricing Plans",
-        "description": "Affordable website pricing plans with no upfront costs. Professional web development starting at $49/month.",
-        "publisher": {
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://www.nextgenwebsites.info/pricing" />
+      <meta property="twitter:title" content="Affordable Website Pricing | No Upfront Costs | NextGen Websites" />
+      <meta property="twitter:description" content="Get a professional website from $49/month with no large upfront fees. Save up to 95% compared to traditional web development costs." />
+      <meta property="twitter:image" content="https://www.nextgenwebsites.info/images/pricing-page-preview.jpg" />
+
+      {/* Additional Meta Tags */}
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="NextGen Websites" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="theme-color" content="#3B82F6" /> {/* Blue color from your design */}
+      <meta name="rating" content="General" />
+      <meta name="revisit-after" content="7 days" />
+
+      {/* Geolocation Meta Tags */}
+      <meta name="geo.region" content="US" />
+      <meta name="geo.placename" content="San Francisco" /> {/* Update with your location */}
+
+      {/* Structured Data - Pricing Table */}
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Website Pricing Plans | NextGen Websites",
+          "description": "Affordable website pricing plans with no upfront costs. Professional web development starting at $49/month.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.nextgenwebsites.info"
+            }, {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pricing",
+              "item": "https://www.nextgenwebsites.info/pricing"
+            }]
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "NextGen Websites",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.nextgenwebsites.info/images/logo.png",
+              "width": 600,
+              "height": 60
+            }
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "position": 1,
+                "name": "Single Page Website",
+                "description": "Perfect for simple websites and landing pages. Includes custom design, responsive layout, and basic SEO setup.",
+                "price": "49.00",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "url": "https://www.nextgenwebsites.info/pricing#single-page",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "position": 2,
+                "name": "Multi Page Website",
+                "description": "Ideal for growing businesses with 3-6 custom pages, contact form, and social media integration.",
+                "price": "75.00",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "url": "https://www.nextgenwebsites.info/pricing#multi-page",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "position": 3,
+                "name": "Advanced Business Website",
+                "description": "Complete solution for larger organizations with 5-10 pages, booking integration, and custom admin dashboard.",
+                "price": "149.00",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "url": "https://www.nextgenwebsites.info/pricing#advanced-business",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "position": 4,
+                "name": "E-Commerce Website",
+                "description": "Full-featured online store with payment processing, inventory management, and order tracking system.",
+                "price": "299.00",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "url": "https://www.nextgenwebsites.info/pricing#ecommerce",
+                "availability": "https://schema.org/InStock"
+              }
+            ]
+          }
+        }
+        `}
+      </script>
+
+      {/* FAQ Schema */}
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why is your pricing so much lower than other web developers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Instead of charging large upfront fees, we use a subscription model that spreads the cost over time. This makes professional web development accessible to businesses of all sizes while ensuring you get ongoing maintenance, updates, and support included in your monthly fee."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a lock-in period for monthly plans?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, there is a minimum commitment of 3 months for monthly plans. This helps us keep pricing low while still delivering high-quality service and support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I request updates or changes later?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. All of our plans include ongoing support and minor updates — like changing text, swapping images, or updating contact info. For larger changes such as adding new pages or advanced features, we can provide a custom quote or recommend upgrading to a higher plan."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I switch between plans later?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll be prorated for the remainder of your billing cycle. When downgrading, changes will take effect at the start of your next billing cycle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to launch my website?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most websites are completed within 7–14 business days, depending on the plan and how quickly you provide content and feedback."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer custom solutions and specific features beyond these plans?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! If you have specific requirements that aren't covered by our standard plans, we'd be happy to provide a custom quote. Contact our team for more information."
+              }
+            }
+          ]
+        }
+        `}
+      </script>
+
+      {/* Organization Schema */}
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
           "@type": "Organization",
           "name": "NextGen Websites",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.nextgenwebsites.info/src/images/logo.png"
+          "url": "https://www.nextgenwebsites.info",
+          "logo": "https://www.nextgenwebsites.info/images/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61574986987621",
+            "https://www.twitter.com/nextgenwebsites",
+            "https://www.linkedin.com/company/nextgenwebsites",
+            "https://www.instagram.com/nextgenwebsites"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-123-4567",
+            "contactType": "customer service",
+            "availableLanguage": ["English"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Web Development Street",
+            "addressLocality": "San Francisco",
+            "addressRegion": "CA",
+            "postalCode": "94103",
+            "addressCountry": "US"
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Single Page Website",
+              "price": "49.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Multi Page Website",
+              "price": "75.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Advanced Business Website",
+              "price": "149.00",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "E-Commerce Website",
+              "price": "299.00",
+              "priceCurrency": "USD"
+            }
+          ]
+        }
+        `}
+      </script>
+
+      {/* Review Schema */}
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Service",
+            "name": "NextGen Websites - Web Development Services"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Eddy Li"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "datePublished": "2024-11-15",
+          "reviewBody": "We were quoted $5,000 by other web developers for our business site. With this service, we got a beautiful custom website for just $75/month with all the features we needed plus ongoing support. The value is incredible!"
+        }
+        `}
+      </script>
+
+      {/* Aggregate Rating Schema */}
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "NextGen Websites Pricing Plans",
+          "url": "https://www.nextgenwebsites.info/pricing",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "124",
+            "bestRating": "5"
           }
-        },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Single Page Website",
-            "price": "49",
-            "priceCurrency": "USD",
-            "description": "Custom designed single page website with responsive layout",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "Multi Page Website",
-            "price": "75",
-            "priceCurrency": "USD",
-            "description": "3-6 custom pages with modern animations and SEO optimization",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "Advanced Business Website",
-            "price": "149",
-            "priceCurrency": "USD",
-            "description": "5-10 custom pages with advanced features for growing businesses",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "name": "eCommerce Website",
-            "price": "299",
-            "priceCurrency": "USD",
-            "description": "Complete online store solution with payment processing",
-            "availability": "https://schema.org/InStock"
-          }
-        ]
-      }
-    `}
-        </script>
+        }
+        `}
+      </script>
+    
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Hero Section */}

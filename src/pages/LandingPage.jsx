@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Helmet } from "react-helmet";
+
 import {
   FaRocket,
   FaLaptopCode,
@@ -184,18 +186,17 @@ const TestimonialCard = ({ testimonial, index }) => {
 // TypewriterText component (unchanged)
 const TypewriterText = () => {
   const phrases = [
-    "Car Wash\"",
-    "Restaurant\"",
-    "Plumbing Business\"",
-    "Sneaker Shop\"",
-    "Music School\"",
-    "Online Store\"",
-    "Portfolio\"",
-    "Next Big Idea\"",
-    "Landscaping Service\"",
-    "Tutoring Company\"",
-    "Gym\"",
-  
+    'Car Wash"',
+    'Restaurant"',
+    'Plumbing Business"',
+    'Sneaker Shop"',
+    'Music School"',
+    'Online Store"',
+    'Portfolio"',
+    'Next Big Idea"',
+    'Landscaping Service"',
+    'Tutoring Company"',
+    'Gym"',
   ];
 
   const [shuffledPhrases, setShuffledPhrases] = useState([]);
@@ -339,15 +340,154 @@ const LandingPage = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0.5]);
 
+  // Define schema.org structured data for LocalBusiness
+  const structuredDataLocalBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "NextGen Websites",
+    description:
+      "Professional web development agency creating modern, responsive websites that drive business growth.",
+    image: "https://example.com/images/nextgen-logo.jpg",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "123 Web Avenue",
+      addressLocality: "Digital City",
+      addressRegion: "CA",
+      postalCode: "90210",
+      addressCountry: "US",
+    },
+    telephone: "+1-555-123-4567",
+    email: "info@nextgenwebsites.com",
+    url: "https://www.nextgenwebsites.com",
+  };
+
+  // Define schema.org structured data for Service
+  const structuredDataService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Web Development Services",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "NextGen Websites",
+    },
+    serviceType: "Web Design and Development",
+    areaServed: "Worldwide",
+    description:
+      "Professional website design and development services for businesses looking to enhance their online presence.",
+    offers: {
+      "@type": "Offer",
+      price: "500",
+      priceCurrency: "USD",
+    },
+  };
   return (
     <>
-      <SEO
-        title="NextGen Websites | Top Web Development Agency"
-        description="Transform your online presence with our expert web development services. Modern, responsive websites that drive business growth."
-        keywords="web agency, professional websites, React development, responsive design, SEO-friendly websites"
-        canonicalUrl="/"
-      />
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>
+          NextGen Websites | Affordable Web Development Agency | Custom Websites
+        </title>
+        <meta
+          name="title"
+          content="NextGen Websites | Affordable Web Development Agency | Custom Websites"
+        />
+        <meta
+          name="description"
+          content="Transform your online presence with our affordable professional web design & development services. Modern, responsive websites that drive business growth. Get started today!"
+        />
+        <meta
+          name="keywords"
+          content="web design, web development, responsive design, affordable websites, custom websites, small business websites, local business web design, SEO-friendly, React development, website maintenance"
+        />
+        <meta name="author" content="NextGen Websites" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
 
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.nextgenwebsites.info/" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.nextgenwebsites.info/" />
+        <meta
+          property="og:title"
+          content="NextGen Websites | Professional Web Design & Development"
+        />
+        <meta
+          property="og:description"
+          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO optimization to boost your online presence."
+        />
+        <meta
+          property="og:image"
+          content="https://www.nextgenwebsites.info/images/og-image.jpg"
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="NextGen Websites" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://www.nextgenwebsites.info/"
+        />
+        <meta
+          property="twitter:title"
+          content="NextGen Websites | Professional Web Design & Development"
+        />
+        <meta
+          property="twitter:description"
+          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO optimization to boost your online presence."
+        />
+        <meta
+          property="twitter:image"
+          content="https://www.nextgenwebsites.info/images/twitter-image.jpg"
+        />
+
+        {/* Structured Data - JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredDataLocalBusiness)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredDataService)}
+        </script>
+
+        {/* Favicon */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Preload Critical Assets */}
+        <link rel="preload" href={WebDevImg} as="image" />
+
+        {/* Mobile Specific Metas */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
+        <meta name="theme-color" content="#2563EB" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+      </Helmet>
       <div className="bg-white text-gray-800 overflow-hidden">
         {/* Hero Section with Typewriter and Angular Geometric Background */}
         <section

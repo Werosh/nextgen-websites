@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import {
   FaBolt,
   FaCode,
@@ -12,7 +13,6 @@ import {
 import { FaLaptopCode } from "react-icons/fa";
 
 import { motion, useAnimation } from "framer-motion";
-import SEO from "../components/SEO";
 
 // Reusable components
 const ScrollReveal = ({
@@ -259,7 +259,7 @@ const ServiceCard = ({ service }) => {
         </motion.p>
 
         {/* Adding a "Learn More" button that appears on hover */}
-        <a href="/pricing">
+        <a href={`/services/${service.id}`} aria-label={`Learn more about ${service.title}`}>
           <motion.button
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -292,44 +292,156 @@ const ServiceCard = ({ service }) => {
 };
 
 const ServiceMain = () => {
+  // Schema data for services
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Web Development Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "NextGen Websites",
+      "description": "Professional web development and design services"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "E-Commerce Solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO Optimization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Maintenance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Social Media Integration"
+          }
+        }
+      ]
+    }
+  };
+
+  // FAQ Schema for structured data
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does NextGen Websites offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer comprehensive web solutions including custom website design, website development, e-commerce solutions, SEO optimization, website maintenance, and social media integration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a website cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike traditional agencies that charge $5,000 to $40,000 upfront, we offer affordable subscription plans with no massive upfront costs, making professional websites accessible to all businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a contract or lock-in period?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We have a minimum 3-month lock-in period for monthly subscriptions. This allows us to complete your website and ensure you're completely satisfied with our service before deciding to continue."
+        }
+      }
+    ]
+  };
+
+  // Organization Schema for structured data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NextGen Websites",
+    "url": "https://www.nextgenwebsites.info/",
+    "logo": "https://www.nextgenwebsites.info/logo.png",
+    "description": "Professional web development and design services that help businesses grow and thrive in the digital world.",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61574986987621",
+      "https://twitter.com/nextgenwebsites",
+      "https://linkedin.com/company/nextgenwebsites",
+      "https://instagram.com/nextgenwebsites"
+    ]
+  };
+
   const services = [
     {
-      id: "design",
+      id: "website-design",
       title: "Website Design",
       description:
         "We create custom, responsive designs that reflects any business brand identity and provide exceptional user experience.",
       icon: <FaLaptopCode size={24} />,
     },
     {
-      id: "development",
+      id: "website-development",
       title: "Website Development",
       description:
         "Modern, high-performance websites built with the latest technologies and full custom stack coded solutions to meet your business needs",
       icon: <FaCode size={24} />,
     },
     {
-      id: "ecommerce",
+      id: "ecommerce-solutions",
       title: "E-Commerce Solutions",
       description:
         "Feature-rich online stores with secure payment gateways and intuitive inventory management for all your E-Commerce needs.",
       icon: <FaShoppingCart size={24} />,
     },
     {
-      id: "seo",
+      id: "seo-optimization",
       title: "SEO Optimization",
       description:
         "Boost your search rankings and drive more organic traffic to increase your online visibility.",
       icon: <FaSearch size={24} />,
     },
     {
-      id: "maintenance",
+      id: "website-maintenance",
       title: "Website Maintenance",
       description:
         "Regular updates, security monitoring, and technical support to keep your website updated and running smoothly.",
       icon: <FaTools size={24} />,
     },
     {
-      id: "social",
+      id: "social-media-integration",
       title: "Social Media Integration",
       description:
         "Seamless connection with social platforms to expand your reach and engage with your audience.",
@@ -380,12 +492,59 @@ const ServiceMain = () => {
 
   return (
     <>
-      <SEO
-        title="Our Services | NextGen Websites"
-        description="Explore our comprehensive web development services including custom website design, e-commerce solutions, and SEO optimization."
-        keywords="web development services, custom websites, e-commerce development, website maintenance, SEO services"
-        canonicalUrl="/services"
-      />
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Professional Website Design & Development Services | NextGen Websites</title>
+        <meta name="title" content="Our Services | NextGen Websites" />
+        <meta
+          name="description"
+          content="Transform your digital presence with our professional web development services. Custom website design, e-commerce solutions, SEO, and maintenance at affordable subscription prices."
+        />
+        <meta
+          name="keywords"
+          content="web development, website design, e-commerce website, custom website, SEO services, website maintenance, affordable websites, professional web design, responsive design, social media integration"
+        />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.nextgenwebsites.info/services" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.nextgenwebsites.info/services" />
+        <meta property="og:title" content="Professional Website Design & Development Services | NextGen Websites" />
+        <meta
+          property="og:description"
+          content="Transform your digital presence with our professional web development services. Custom website design, e-commerce solutions, SEO, and maintenance at affordable subscription prices."
+        />
+        <meta property="og:image" content="https://www.nextgenwebsites.info/images/services-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.nextgenwebsites.info/services" />
+        <meta property="twitter:title" content="Professional Website Design & Development Services | NextGen Websites" />
+        <meta
+          property="twitter:description"
+          content="Transform your digital presence with our professional web development services. Custom website design, e-commerce solutions, SEO, and maintenance at affordable subscription prices."
+        />
+        <meta property="twitter:image" content="https://www.nextgenwebsites.info/images/services-twitter-image.jpg" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="NextGen Websites" />
+        <meta name="theme-color" content="#2563EB" />
+        
+        {/* Structured Data (JSON-LD) */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+      </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
         <section className="relative bg-blue-600 text-white py-24 overflow-hidden">
@@ -551,9 +710,10 @@ const ServiceMain = () => {
                       Only 3 Month Lock In Period
                     </h3>
                     <p className="text-gray-600">
-                      Try any plan for a minimum of 3 months. Experience our service, 
-                      see your website come to life, and only continue if you're 
-                      completely satisfied. (Only applies to monthly subscriptions)
+                      Try any plan for a minimum of 3 months. Experience our
+                      service, see your website come to life, and only continue
+                      if you're completely satisfied. (Only applies to monthly
+                      subscriptions)
                     </p>
                   </div>
                 </div>
