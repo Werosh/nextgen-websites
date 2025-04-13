@@ -594,7 +594,7 @@ const PricingMain = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://yourwebsitedomain.com/pricing" />
+        <link rel="canonical" href="https://www.nextgenwebsites.info/pricing" />
 
         {/* Open Graph Meta Tags */}
         <meta
@@ -608,28 +608,15 @@ const PricingMain = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://yourwebsitedomain.com/pricing"
+          content="https://www.nextgenwebsites.info/pricing"
         />
         <meta
           property="og:image"
-          content="https://yourwebsitedomain.com/path-to-pricing-image.jpg"
+          content="https://www.nextgenwebsites.info/src/images/logo.png"
         />
         <meta property="og:site_name" content="NextGen Websites" />
 
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Website Pricing Plans | NextGen Websites"
-        />
-        <meta
-          name="twitter:description"
-          content="Affordable website pricing plans with no upfront costs. Professional web development starting at $49/month with your first month free."
-        />
-        <meta
-          name="twitter:image"
-          content="https://yourwebsitedomain.com/path-to-pricing-image.jpg"
-        />
+       
 
         {/* Structured Data (Schema.org) */}
         <script type="application/ld+json">
@@ -644,7 +631,7 @@ const PricingMain = () => {
           "name": "NextGen Websites",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://yourwebsitedomain.com/path-to-logo.png"
+            "url": "https://www.nextgenwebsites.info/src/images/logo.png"
           }
         },
         "offers": [

@@ -10,7 +10,7 @@ const SEO = ({
   ogType = 'website',
   twitterCard = 'summary_large_image'
 }) => {
-  const siteUrl = 'https://yourwebsitedomain.com'; // Replace with your actual domain
+  const siteUrl = 'https://www.nextgenwebsites.info/'; 
   
   return (
     <Helmet>
