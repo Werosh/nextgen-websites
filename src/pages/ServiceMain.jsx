@@ -115,7 +115,7 @@ const AnimatedLimitedOffer = () => {
           }}
         >
           <p className="text-xl md:text-2xl font-bold">
-            Get FIRST MONTH FREE on any plan!
+            Get a website for our LOWEST price EVER!
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ const AnimatedLimitedOffer = () => {
             </li>
             <li className="flex items-center">
               <FaCheck className="text-white mr-2" />
-              <span>Full features included in free month</span>
+              <span>All features in selected plan included</span>
             </li>
           </ul>
         </div>
@@ -143,7 +143,7 @@ const AnimatedLimitedOffer = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Claim Free Month Now</span>
+              <span>Claim Offer Now!</span>
               <FaArrowRight />
             </motion.button>
           </a>
@@ -548,12 +548,12 @@ const ServiceMain = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Risk-Free First Month
+                      Only 3 Month Lock In Period
                     </h3>
                     <p className="text-gray-600">
-                      Try any plan free for your first month with no obligation.
-                      Experience our service, see your website come to life, and
-                      only pay if you're completely satisfied.
+                      Try any plan for a minimum of 3 months. Experience our service, 
+                      see your website come to life, and only continue if you're 
+                      completely satisfied. (Only applies to monthly subscriptions)
                     </p>
                   </div>
                 </div>
