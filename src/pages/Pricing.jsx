@@ -146,11 +146,7 @@ const FeatureItem = ({ included, text, isPopular }) => {
 const PriceBadge = ({ oldPrice, newPrice }) => {
   return (
     <div className="flex items-center justify-center mb-2">
-      <div className="bg-red-50 px-3 py-1 rounded-full">
-        <span className="text-red-500 font-medium line-through mr-2 text-2xl">
-          {oldPrice}
-        </span>
-      </div>
+      <div className=" px-3 py-1 rounded-full"></div>
     </div>
   );
 };
@@ -190,7 +186,7 @@ const PriceCard = ({ plan, isPopular, index }) => {
           </p>
 
           {/* Price comparison */}
-          <PriceBadge oldPrice={plan.oldPrice} newPrice={plan.price} />
+          <PriceBadge newPrice={plan.price} />
 
           <div className="flex items-center justify-center mb-6">
             <span className="text-4xl font-bold">{plan.price}</span>
@@ -288,7 +284,7 @@ const CompetitorComparison = () => {
                   <td className="px-6 py-4 text-gray-800">
                     $3,000 - $5,000 upfront
                   </td>
-                  <td className="px-6 py-4 text-blue-600 font-bold">$449</td>
+                  <td className="px-6 py-4 text-blue-600 font-bold">$490</td>
                   <td className="px-6 py-4 text-green-600 font-bold">
                     Up to 85% savings
                   </td>
@@ -312,7 +308,7 @@ const CompetitorComparison = () => {
                   <td className="px-6 py-4 text-gray-800">
                     $10,000 - $25,000 upfront
                   </td>
-                  <td className="px-6 py-4 text-blue-600 font-bold">$1,449</td>
+                  <td className="px-6 py-4 text-blue-600 font-bold">$1,590</td>
                   <td className="px-6 py-4 text-green-600 font-bold">
                     Up to 86% savings
                   </td>
@@ -324,7 +320,7 @@ const CompetitorComparison = () => {
                   <td className="px-6 py-4 text-gray-800">
                     $15,000 - $40,000 upfront
                   </td>
-                  <td className="px-6 py-4 text-blue-600 font-bold">$2,899</td>
+                  <td className="px-6 py-4 text-blue-600 font-bold">$2,890</td>
                   <td className="px-6 py-4 text-green-600 font-bold">
                     Up to 81% savings
                   </td>
@@ -405,8 +401,8 @@ const PricingMain = () => {
     {
       name: "Single Page",
       description: "Perfect for Simple Websites",
-      price: "$449",
-      oldPrice: "$899",
+      price: "$490",
+      oldPrice: "",
       icon: <FaRocket className="text-4xl text-blue-600" />,
       features: [
         { text: "Custom Designed Single Page", included: true },
@@ -424,11 +420,11 @@ const PricingMain = () => {
       name: "Multi Page",
       description: "For Growing Businesses",
       price: "$990",
-      oldPrice: "$1980",
+      oldPrice: "",
       icon: <FaRegBuilding className="text-4xl text-yellow-400" />,
       features: [
         { text: <strong>Everything in Single Page</strong>, included: true },
-        { text: "3-6 Custom Pages", included: true },
+        { text: "4 Custom Pages", included: true },
         { text: "Contact Form with Emails", included: true },
         { text: "Google Maps and Reviews Integrations", included: true },
         { text: "Modern Animations", included: true },
@@ -441,8 +437,8 @@ const PricingMain = () => {
     {
       name: "Advanced Business",
       description: "For Larger Organisations",
-      price: "$1,449",
-      oldPrice: "$2,898",
+      price: "$1,590",
+      oldPrice: "",
       icon: <FaHandshake className="text-4xl text-purple-600" />,
       features: [
         { text: <strong>Everything in Multi Page</strong>, included: true },
@@ -459,8 +455,8 @@ const PricingMain = () => {
     {
       name: "E-Commerce",
       description: "For Online Stores",
-      price: "$2,899",
-      oldPrice: "$5,798",
+      price: "$2,890",
+      oldPrice: "",
       icon: <FaShoppingCart className="text-4xl text-green-600" />,
       features: [
         {
@@ -955,7 +951,7 @@ const PricingMain = () => {
                             const featureDetail = {
                               "Number of Pages": [
                                 "1 page",
-                                "3-6 pages",
+                                "4 pages",
                                 "5-10 pages",
                                 "Unlimited",
                               ],

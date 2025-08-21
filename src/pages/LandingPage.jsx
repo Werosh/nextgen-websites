@@ -17,13 +17,12 @@ import {
   FaHashtag,
 } from "react-icons/fa";
 
+import { TextQuote, Phone, FileText } from "lucide-react";
+
 import WebDevImg from "../images/next-gen-back.webp";
 import TeamImg from "../images/team.webp";
 
 import SEO from "../components/SEO";
-
-
-
 
 // Enhanced animation components
 const ScrollReveal = ({
@@ -350,7 +349,7 @@ const LandingPage = () => {
     name: "NextGen Websites",
     description:
       "Professional web development agency creating modern, responsive websites that drive business growth.",
-    image: "https://example.com/images/nextgen-logo.jpg",
+    image: "https://www.nextgenwebsites.info/images/logo.webp",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -360,9 +359,9 @@ const LandingPage = () => {
       postalCode: "90210",
       addressCountry: "US",
     },
-    telephone: "+1-555-123-4567",
-    email: "info@nextgenwebsites.com",
-    url: "https://www.nextgenwebsites.com",
+    telephone: "+61-467-561-550",
+    email: "info@nextgenwebsites.info",
+    url: "https://www.nextgenwebsites.info",
   };
 
   // Define schema.org structured data for Service
@@ -424,7 +423,7 @@ const LandingPage = () => {
         />
         <meta
           property="og:image"
-          content="https://www.nextgenwebsites.info/images/og-image.jpg"
+          content="https://www.nextgenwebsites.info/images/logo.webp"
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content="NextGen Websites" />
@@ -445,7 +444,7 @@ const LandingPage = () => {
         />
         <meta
           property="twitter:image"
-          content="https://www.nextgenwebsites.info/images/twitter-image.jpg"
+          content="https://www.nextgenwebsites.info/images/logo.webp"
         />
 
         {/* Structured Data - JSON-LD */}
@@ -491,6 +490,7 @@ const LandingPage = () => {
           content="black-translucent"
         />
       </Helmet>
+
       <div className="bg-white text-gray-800 overflow-hidden">
         {/* Hero Section with Typewriter and Angular Geometric Background */}
         <section
@@ -543,7 +543,7 @@ const LandingPage = () => {
             <div className="absolute w-32 h-32 border-4 border-blue-900 top-10 left-10 opacity-30 transform rotate-12 md:hidden"></div>
           </div>
 
-          <div className="container mx-auto px-6 py-20 md:py-32 relative z-10 mt-60 xl:mt-0 lg:mt-0 md:mt-0 sm:mt-0"> 
+          <div className="container mx-auto px-6 py-20 md:py-32 relative z-10 mt-60 xl:mt-0 lg:mt-0 md:mt-0 sm:mt-0">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <ScrollReveal direction="left" className="md:w-1/2 mb-12 md:mb-0">
                 <div className="relative">
@@ -561,20 +561,115 @@ const LandingPage = () => {
                   </span>
                 </div>
                 <p className="text-lg md:text-xl text-gray-600 mb-8">
-                  Elevate your online presence with cutting-edge web solutions
-                  tailored for your business needs at a fraction of the cost.
+                  Websites that work for you - Affordable, trustworthy and
+                  precise
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/pricing">
-                    <motion.button
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span>Get Started</span>
-                      <FaRocket className="text-white" />
-                    </motion.button>
-                  </a>
+                <div className="flex flex-col sm:flex-row gap-4 p-8 ">
+                  <div>
+                    <a href="/contact">
+                      <motion.button
+                        className="relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 group"
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)",
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        {/* Animated background gradient */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.6 }}
+                        />
+
+                        <motion.span
+                          className="relative z-10"
+                          whileHover={{ letterSpacing: "0.05em" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          GET A FREE QUOTE
+                        </motion.span>
+
+                        <motion.div
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <FileText
+                            className="text-white relative z-10"
+                            size={20}
+                          />
+                        </motion.div>
+
+                        {/* Ripple effect */}
+                        <motion.div
+                          className="absolute inset-0 bg-white/10 rounded-lg"
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileHover={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      </motion.button>
+                    </a>
+                  </div>
+
+                  <div>
+                    <a href="tel:+61467561550">
+                      <motion.button
+                        className="relative bg-white border-2 border-blue-600 hover:border-black text-blue-600 hover:text-black font-bold py-4 px-8 rounded-lg shadow-lg overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 group"
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 20px 40px rgba(37, 99, 235, 0.2)",
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                      >
+                        {/* Fill background on hover */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "0%" }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        />
+
+                        <motion.span
+                          className="relative z-10 transition-colors duration-300"
+                          whileHover={{ letterSpacing: "0.05em" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          CALL NOW
+                        </motion.span>
+
+                        <motion.div
+                          whileHover={{
+                            rotate: [0, -10, 10, -10, 0],
+                            transition: { duration: 0.5 },
+                          }}
+                          className="relative z-10"
+                        >
+                          <Phone
+                            className="transition-colors duration-300 group-hover:text-black text-blue-600"
+                            size={20}
+                          />
+                        </motion.div>
+
+                        {/* Pulse effect */}
+                        <motion.div
+                          className="absolute inset-0 border-2 border-blue-400 rounded-lg"
+                          initial={{ scale: 1, opacity: 0 }}
+                          whileHover={{
+                            scale: 1.1,
+                            opacity: [0, 1, 0],
+                            transition: { duration: 1, repeat: Infinity },
+                          }}
+                        />
+                      </motion.button>
+                    </a>
+                  </div>
                 </div>
               </ScrollReveal>
 
@@ -593,10 +688,10 @@ const LandingPage = () => {
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
                   >
-                    <div className="flex items-center gap-3">
+                    {/* <div className="flex items-center gap-3">
                       <FaRocket className="text-blue-600 text-xl" />
                       <span className="font-semibold">Launch Fast</span>
-                    </div>
+                    </div> */}
                   </motion.div>
                 </div>
               </ScrollReveal>
@@ -617,10 +712,7 @@ const LandingPage = () => {
         </section>
 
         {/* About Section */}
-        <section
-          id="about"
-          className="bg-blue-50 mb-25 relative overflow-hidden py-8"
-        >
+        <section id="about" className=" mb-25 relative overflow-hidden py-8">
           <ParallaxSection offsetMultiplier={0.1} direction="up">
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-200 rounded-full opacity-30"></div>
             <div className="absolute -left-20 -top-20 w-96 h-96 bg-blue-100 rounded-full opacity-30"></div>
@@ -650,70 +742,92 @@ const LandingPage = () => {
                   About NextGen Websites
                 </h2>
                 <div className="w-20 h-1 bg-blue-600 mb-12"></div>
+
                 <p className="text-lg text-gray-600 mb-6">
-                  At NextGen Websites, we believe that getting online shouldn’t
-                  cost a fortune. We’re passionate about helping small
-                  businesses, startups, and local legends step confidently into
-                  the digital world without the crazy price tags.
-                </p>
-                <p className="text-lg text-gray-600 mb-8">
-                  Our mission is simple: make beautiful, functional websites
-                  accessible to everyone — no time wasting, no hidden fees, no
-                  BS. Just clean and honest pricing that works. It’s all about
-                  pushing into the next generation of business, together.
+                  At NextGen, we believe a great website shouldn't cost a
+                  fortune. Every business, no matter the size, deserves a
+                  modern, professional and engaging website that drives results.
                 </p>
 
-                <StaggerContainer className="grid grid-cols-2 gap-6">
-                  {[
-                    { number: "50+", label: "Projects Completed" },
-                    { number: "100%", label: "Customer Satisfaction" },
-                    { number: "5+", label: "Years Experience" },
-                    { number: "24/7", label: "Customer Support" },
-                  ].map((stat, index) => (
-                    <StaggerItem
-                      key={index}
-                      direction={index % 2 === 0 ? "up" : "down"}
-                    >
-                      <div className="text-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition hover:-translate-y-1">
-                        <h3 className="text-3xl font-bold text-blue-600 mb-2">
-                          {stat.number}
-                        </h3>
-                        <p className="text-gray-600">{stat.label}</p>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </StaggerContainer>
+                <p className="text-lg text-gray-600 mb-6">
+                  Our team specialises in creating websites that are{" "}
+                  <span className="font-bold text-gray-800">
+                    tailored to your unique needs
+                  </span>
+                  , whether you're a startup, a growing business or an
+                  established company. We focus on{" "}
+                  <span className="font-bold text-gray-800">speed</span>,{" "}
+                  <span className="font-bold text-gray-800">precision</span> and{" "}
+                  <span className="font-bold text-gray-800">affordability</span>
+                  .
+                </p>
+
+                <p className="text-lg text-gray-600 mb-4">
+                  At NextGen Websites, you can expect:
+                </p>
+
+                <ul className="text-lg text-gray-600 mb-6 space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold mr-2">•</span>
+                    <span>
+                      <span className="font-semibold text-gray-800">
+                        Fast turnaround times
+                      </span>{" "}
+                      – so your business can go live quickly.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold mr-2">•</span>
+                    <span>
+                      <span className="font-semibold text-gray-800">
+                        Affordable pricing
+                      </span>{" "}
+                      – delivering maximum value without breaking the bank.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold mr-2">•</span>
+                    <span>
+                      <span className="font-semibold text-gray-800">
+                        Tailored solutions
+                      </span>{" "}
+                      – every design is crafted with your brand and goals in
+                      mind.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 font-bold mr-2">•</span>
+                    <span>
+                      <span className="font-semibold text-gray-800">
+                        Ongoing support
+                      </span>{" "}
+                      – because your success doesn't end when your site
+                      launches.
+                    </span>
+                  </li>
+                </ul>
+
+                <p className="text-lg text-gray-600 mb-8">
+                  Your website is often the first impression customers have of
+                  your business. Let's make it unforgettable. Partner with us
+                  today and take your digital presence to the next level.
+                </p>
+
+                <a
+                  href="/contact"
+                  className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Get a Quote
+                </a>
               </ScrollReveal>
             </div>
-          </div>
-        </section>
-
-        {/* Services Preview */}
-        <section id="services" className="bg-white  ">
-          <div className="container mx-auto px-6">
-            <ScrollReveal direction="up" className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Our Services
-              </h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We offer comprehensive web solutions to help your business
-                thrive in the digital landscape.
-              </p>
-            </ScrollReveal>
-
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <ServiceCard key={index} service={service} index={index} />
-              ))}
-            </StaggerContainer>
           </div>
         </section>
 
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="py-25 bg-white relative overflow-hidden"
+          className=" bg-white relative overflow-hidden"
         >
           <ParallaxSection direction="down">
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-blue-50 to-transparent opacity-70"></div>
@@ -738,6 +852,28 @@ const LandingPage = () => {
                   testimonial={testimonial}
                   index={index}
                 />
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        {/* Services Preview */}
+        <section id="services" className="bg-white  ">
+          <div className="container mx-auto px-6 py-25 :">
+            <ScrollReveal direction="up" className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Our Services
+              </h2>
+              <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                We offer comprehensive web solutions to help your business
+                thrive in the digital landscape.
+              </p>
+            </ScrollReveal>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <ServiceCard key={index} service={service} index={index} />
               ))}
             </StaggerContainer>
           </div>

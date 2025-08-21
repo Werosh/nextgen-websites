@@ -14,8 +14,6 @@ import { FaLaptopCode } from "react-icons/fa";
 
 import { motion, useAnimation } from "framer-motion";
 
-
-
 // Reusable components
 const ScrollReveal = ({
   children,
@@ -261,7 +259,10 @@ const ServiceCard = ({ service }) => {
         </motion.p>
 
         {/* Adding a "Learn More" button that appears on hover */}
-        <a href={`/services/${service.id}`} aria-label={`Learn more about ${service.title}`}>
+        <a
+          href={`/services/${service.id}`}
+          aria-label={`Learn more about ${service.title}`}
+        >
           <motion.button
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -298,112 +299,113 @@ const ServiceMain = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Web Development Services",
-    "provider": {
+    serviceType: "Web Development Services",
+    provider: {
       "@type": "Organization",
-      "name": "NextGen Websites",
-      "description": "Professional web development and design services"
+      name: "NextGen Websites",
+      description: "Professional web development and design services",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "Country",
-      "name": "United States"
+      name: "United States",
     },
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Web Development Services",
-      "itemListElement": [
+      name: "Web Development Services",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Website Design"
-          }
+            name: "Website Design",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Website Development"
-          }
+            name: "Website Development",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "E-Commerce Solutions"
-          }
+            name: "E-Commerce Solutions",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "SEO Optimization"
-          }
+            name: "SEO Optimization",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Website Maintenance"
-          }
+            name: "Website Maintenance",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Social Media Integration"
-          }
-        }
-      ]
-    }
+            name: "Social Media Integration",
+          },
+        },
+      ],
+    },
   };
 
   // FAQ Schema for structured data
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    mainEntity: [
       {
         "@type": "Question",
-        "name": "What services does NextGen Websites offer?",
-        "acceptedAnswer": {
+        name: "What services does NextGen Websites offer?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "We offer comprehensive web solutions including custom website design, website development, e-commerce solutions, SEO optimization, website maintenance, and social media integration."
-        }
+          text: "We offer comprehensive web solutions including custom website design, website development, e-commerce solutions, SEO optimization, website maintenance, and social media integration.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How much does a website cost?",
-        "acceptedAnswer": {
+        name: "How much does a website cost?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Unlike traditional agencies that charge $5,000 to $40,000 upfront, we offer affordable subscription plans with no massive upfront costs, making professional websites accessible to all businesses."
-        }
+          text: "Unlike traditional agencies that charge $5,000 to $40,000 upfront, we offer affordable subscription plans with no massive upfront costs, making professional websites accessible to all businesses.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Is there a contract or lock-in period?",
-        "acceptedAnswer": {
+        name: "Is there a contract or lock-in period?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "We have a minimum 3-month lock-in period for monthly subscriptions. This allows us to complete your website and ensure you're completely satisfied with our service before deciding to continue."
-        }
-      }
-    ]
+          text: "We have a minimum 3-month lock-in period for monthly subscriptions. This allows us to complete your website and ensure you're completely satisfied with our service before deciding to continue.",
+        },
+      },
+    ],
   };
 
   // Organization Schema for structured data
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "NextGen Websites",
-    "url": "https://www.nextgenwebsites.info/",
-    "logo": "https://www.nextgenwebsites.info/logo.png",
-    "description": "Professional web development and design services that help businesses grow and thrive in the digital world.",
-    "sameAs": [
+    name: "NextGen Websites",
+    url: "https://www.nextgenwebsites.info/",
+    logo: "https://www.nextgenwebsites.info/logo.png",
+    description:
+      "Professional web development and design services that help businesses grow and thrive in the digital world.",
+    sameAs: [
       "https://www.facebook.com/profile.php?id=61574986987621",
       "https://twitter.com/nextgenwebsites",
       "https://linkedin.com/company/nextgenwebsites",
-      "https://instagram.com/nextgenwebsites"
-    ]
+      "https://instagram.com/nextgenwebsites",
+    ],
   };
 
   const services = [
@@ -496,7 +498,9 @@ const ServiceMain = () => {
     <>
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Professional Website Design & Development Services | NextGen Websites</title>
+        <title>
+          Professional Website Design & Development Services | NextGen Websites
+        </title>
         <meta name="title" content="Our Services | NextGen Websites" />
         <meta
           name="description"
@@ -506,43 +510,62 @@ const ServiceMain = () => {
           name="keywords"
           content="web development, website design, e-commerce website, custom website, SEO services, website maintenance, affordable websites, professional web design, responsive design, social media integration"
         />
-        
+
         {/* Canonical URL */}
-        <link rel="canonical" href="https://www.nextgenwebsites.info/services" />
-        
+        <link
+          rel="canonical"
+          href="https://www.nextgenwebsites.info/services"
+        />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.nextgenwebsites.info/services" />
-        <meta property="og:title" content="Professional Website Design & Development Services | NextGen Websites" />
+        <meta
+          property="og:url"
+          content="https://www.nextgenwebsites.info/services"
+        />
+        <meta
+          property="og:title"
+          content="Professional Website Design & Development Services | NextGen Websites"
+        />
         <meta
           property="og:description"
           content="Transform your digital presence with our professional web development services. Custom website design, e-commerce solutions, SEO, and maintenance at affordable subscription prices."
         />
-        <meta property="og:image" content="https://www.nextgenwebsites.info/images/services-og-image.jpg" />
-        
+        <meta
+          property="og:image"
+          content="https://www.nextgenwebsites.info/images/logo.webp"
+        />
+
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.nextgenwebsites.info/services" />
-        <meta property="twitter:title" content="Professional Website Design & Development Services | NextGen Websites" />
+        <meta
+          property="twitter:url"
+          content="https://www.nextgenwebsites.info/services"
+        />
+        <meta
+          property="twitter:title"
+          content="Professional Website Design & Development Services | NextGen Websites"
+        />
         <meta
           property="twitter:description"
           content="Transform your digital presence with our professional web development services. Custom website design, e-commerce solutions, SEO, and maintenance at affordable subscription prices."
         />
-        <meta property="twitter:image" content="https://www.nextgenwebsites.info/images/services-twitter-image.jpg" />
-        
+        <meta
+          property="twitter:image"
+          content="https://www.nextgenwebsites.info/images/services-twitter-image.jpg"
+        />
+
         {/* Additional Meta Tags */}
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="NextGen Websites" />
         <meta name="theme-color" content="#2563EB" />
-        
+
         {/* Structured Data (JSON-LD) */}
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}
         </script>
@@ -657,21 +680,21 @@ const ServiceMain = () => {
         </section>
 
         {/* Limited Time Offer Section */}
-        <section className=" container mx-auto px-6 py-20 mt-15">
+        <section className="container mx-auto px-6 py-20 mt-15">
           <ScrollReveal direction="up">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="md:col-span-1">
-                <AnimatedLimitedOffer />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              {/* <div className="md:col-span-1">
+        <AnimatedLimitedOffer />
+      </div> */}
 
-              <div className="md:col-span-2 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              <div className="md:col-span-3 flex flex-col justify-center items-center text-center max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold text-gray-800 mb-8">
                   Why Pay Thousands Upfront?
                 </h2>
 
-                <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="bg-blue-100 rounded-full p-3 h-min">
+                <div className="space-y-6 w-full">
+                  <div className="flex gap-4 text-left">
+                    <div className="bg-blue-100 rounded-full p-3 h-min flex-shrink-0">
                       <FaCheck className="text-blue-600" />
                     </div>
                     <div>
@@ -680,43 +703,41 @@ const ServiceMain = () => {
                       </h3>
                       <p className="text-gray-600">
                         Most web developers charge $5,000 to $40,000 upfront.
-                        Our subscription model spreads the cost, making
-                        professional websites accessible to all businesses.
+                        Our affordable service removes that obstacle that makes
+                        it hard to enter their business into the digital world.
                       </p>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
+                  <div className="flex gap-4 text-left">
+                    <div className="bg-blue-100 rounded-full p-3 h-min flex-shrink-0">
+                      <FaCheck className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        Continuous Updates & Maintenance
+                      </h3>
+                      <p className="text-gray-600">
+                        We also provide FREE ongoing technical support and minor
+                        updates, ensuring your website is up to date.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Continuous Updates & Maintenance
-                    </h3>
-                    <p className="text-gray-600">
-                      Unlike traditional agencies that charge extra for updates,
-                      our subscription includes ongoing maintenance, security
-                      updates, and technical support.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <div className="bg-blue-100 rounded-full p-3 h-min">
-                    <FaCheck className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Only 3 Month Lock In Period
-                    </h3>
-                    <p className="text-gray-600">
-                      Try any plan for a minimum of 3 months. Experience our
-                      service, see your website come to life, and only continue
-                      if you're completely satisfied. (Only applies to monthly
-                      subscriptions)
-                    </p>
+                  <div className="flex gap-4 text-left">
+                    <div className="bg-blue-100 rounded-full p-3 h-min flex-shrink-0">
+                      <FaCheck className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        Only Pay if Satisfied
+                      </h3>
+                      <p className="text-gray-600">
+                        Only pay for your website if you're 100% satisfied,
+                        otherwise no charge is taken. We only ask for a small
+                        deposit to begin our work.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -742,7 +763,7 @@ const ServiceMain = () => {
                       innovative solutions.
                     </p>
                   </div>
-                  <a href="tel:+15551234567">
+                  <a href="tel:+61467561550">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
