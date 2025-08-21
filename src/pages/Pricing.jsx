@@ -933,7 +933,7 @@ const PricingMain = () => {
                         "Custom Domain",
                         "Responsive Design",
                         "Contact Form",
-                        "SEO Optimization",
+                        "SEO Optimisation",
                         "Social Media Integration",
                         "Modern Animations",
                         "Image Gallery",
@@ -973,7 +973,7 @@ const PricingMain = () => {
                                 "Advanced",
                                 "Advanced",
                               ],
-                              "SEO Optimization": [
+                              "SEO Optimisation": [
                                 <FaTimes className="text-gray-400 mx-auto" />,
                                 "Basic",
                                 "Advanced",

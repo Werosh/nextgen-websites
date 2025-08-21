@@ -293,7 +293,7 @@ const LandingPage = () => {
     },
     {
       icon: <FaChartLine className="text-blue-600 text-4xl mb-4" />,
-      title: "SEO Optimization",
+      title: "SEO Optimisation",
       description:
         "Boost your online visibility and attract more qualified traffic to your website.",
     },
@@ -419,7 +419,7 @@ const LandingPage = () => {
         />
         <meta
           property="og:description"
-          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO optimization to boost your online presence."
+          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO Optimisation to boost your online presence."
         />
         <meta
           property="og:image"
@@ -440,7 +440,7 @@ const LandingPage = () => {
         />
         <meta
           property="twitter:description"
-          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO optimization to boost your online presence."
+          content="Affordable professional websites for small businesses. Custom design, responsive interfaces, and SEO Optimisation to boost your online presence."
         />
         <meta
           property="twitter:image"

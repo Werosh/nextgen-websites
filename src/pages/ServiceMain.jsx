@@ -338,7 +338,7 @@ const ServiceMain = () => {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "SEO Optimization",
+            name: "SEO Optimisation",
           },
         },
         {
@@ -369,7 +369,7 @@ const ServiceMain = () => {
         name: "What services does NextGen Websites offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We offer comprehensive web solutions including custom website design, website development, e-commerce solutions, SEO optimization, website maintenance, and social media integration.",
+          text: "We offer comprehensive web solutions including custom website design, website development, e-commerce solutions, SEO Optimisation, website maintenance, and social media integration.",
         },
       },
       {
@@ -431,8 +431,8 @@ const ServiceMain = () => {
       icon: <FaShoppingCart size={24} />,
     },
     {
-      id: "seo-optimization",
-      title: "SEO Optimization",
+      id: "seo-Optimisation",
+      title: "SEO Optimisation",
       description:
         "Boost your search rankings and drive more organic traffic to increase your online visibility.",
       icon: <FaSearch size={24} />,
