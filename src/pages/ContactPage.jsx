@@ -231,7 +231,7 @@ const ContactPage = () => {
   // Initialize EmailJS
   useEffect(() => {
     // Replace with your actual EmailJS User ID
-    emailjs.init("YOUR_USER_ID");
+    emailjs.init("jYJ-e601iwg9aZj-k");
   }, []);
 
   // Form state
@@ -262,7 +262,7 @@ const ContactPage = () => {
 
     // Replace these parameters with your actual EmailJS service ID and template ID
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current)
+      .sendForm("service_jujp055", "template_ssdqlpb", form.current)
       .then((result) => {
         console.log("Email successfully sent!", result.text);
         setFormStatus("success");
@@ -484,7 +484,7 @@ const ContactPage = () => {
                       label="Phone Number"
                       type="tel"
                       name="phone"
-                      placeholder="(555) 123-4567"
+                      placeholder=""
                       value={formData.phone}
                       onChange={handleChange}
                     />

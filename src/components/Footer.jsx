@@ -111,10 +111,6 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61574986987621"
                 target="_blank"
               />
-              <SocialIcon icon={<FaTwitter />} href="https://twitter.com" />
-              <SocialIcon icon={<FaInstagram />} href="https://instagram.com" />
-              <SocialIcon icon={<FaLinkedinIn />} href="https://linkedin.com" />
-              <SocialIcon icon={<FaYoutube />} href="https://youtube.com" />
             </div>
           </ScrollReveal>
 
@@ -133,8 +129,6 @@ const Footer = () => {
                 "Home",
                 "Services",
                 "Pricing",
-                "Portfolio",
-                "About Us",
                 "Contact",
               ].map((link, index) => (
                 <li key={index}>

@@ -14,6 +14,8 @@ import { FaLaptopCode } from "react-icons/fa";
 
 import { motion, useAnimation } from "framer-motion";
 
+
+
 // Reusable components
 const ScrollReveal = ({
   children,

@@ -12,7 +12,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { BiSolidPhoneCall } from "react-icons/bi";
-import LogoImg from "../images/logo.png"
+import LogoImg from "../images/logo.webp"
 
 
 const Navbar = () => {

@@ -17,10 +17,13 @@ import {
   FaHashtag,
 } from "react-icons/fa";
 
-import WebDevImg from "../images/next-gen-back.png";
-import TeamImg from "../images/team.jpg";
+import WebDevImg from "../images/next-gen-back.webp";
+import TeamImg from "../images/team.webp";
 
 import SEO from "../components/SEO";
+
+
+
 
 // Enhanced animation components
 const ScrollReveal = ({
@@ -540,7 +543,7 @@ const LandingPage = () => {
             <div className="absolute w-32 h-32 border-4 border-blue-900 top-10 left-10 opacity-30 transform rotate-12 md:hidden"></div>
           </div>
 
-          <div className="container mx-auto px-6 py-20 md:py-32 relative z-10">
+          <div className="container mx-auto px-6 py-20 md:py-32 relative z-10 mt-60 xl:mt-0 lg:mt-0 md:mt-0 sm:mt-0"> 
             <div className="flex flex-col md:flex-row items-center justify-between">
               <ScrollReveal direction="left" className="md:w-1/2 mb-12 md:mb-0">
                 <div className="relative">
