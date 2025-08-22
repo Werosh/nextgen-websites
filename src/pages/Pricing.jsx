@@ -868,7 +868,7 @@ const PricingMain = () => {
             </ScrollReveal>
 
             {/* <FloatingBadge /> */}
-            <LimitedOffer />
+            {/* <LimitedOffer /> */}
 
             <StaggerContainer
               staggerDelay={0.15}
@@ -1060,53 +1060,10 @@ const PricingMain = () => {
               </ScrollReveal>
             </div>
           </section>
-
-          {/* CTA Section */}
-          <section className="py-16 mt-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute w-96 h-96 rounded-full bg-blue-500 opacity-20 -top-20 -right-20"></div>
-              <div className="absolute w-96 h-96 rounded-full bg-blue-700 opacity-20 -bottom-40 -left-20"></div>
-            </div>
-
-            <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col lg:flex-row items-center justify-between">
-                <ScrollReveal
-                  direction="left"
-                  className="text-white mb-10 lg:mb-0 lg:mr-10"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <FaBolt className="text-yellow-300 text-xl" />
-                    <span className="font-semibold text-yellow-300">
-                      Limited Time Offer
-                    </span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Get Our Lowest Prices + 20% OFF With Annual Billing
-                  </h2>
-                  <p className="text-lg text-blue-100">
-                    Sign up for any annual plan today and get both our low price
-                    and 20% off the annual price. DOUBLE WHAMMY!
-                  </p>
-                </ScrollReveal>
-
-                <ScrollReveal direction="right" delay={0.2}>
-                  <motion.button
-                    className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-10 rounded-lg shadow-xl transition flex items-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span>Claim Now</span>
-                    <FaArrowRight />
-                  </motion.button>
-                </ScrollReveal>
-              </div>
-            </div>
-          </section>
         </section>
 
         {/* FAQ Section */}
-        <section className="pt-3 pb-20 bg-white">
+        {/* <section className="pt-3 pb-20 bg-white">
           <div className="container mx-auto px-6 max-w-4xl">
             <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -1124,10 +1081,10 @@ const PricingMain = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Money-back Guarantee */}
-        <section className="py-12 bg-white">
+        {/* <section className="py-12 bg-white">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
               <FaQuestionCircle className="text-3xl text-blue-600" />
@@ -1140,7 +1097,7 @@ const PricingMain = () => {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );
