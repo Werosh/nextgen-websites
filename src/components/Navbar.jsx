@@ -46,9 +46,10 @@ const Navbar = () => {
     };
   }, []);
 
-  // Update active page when location changes
+  // Update active page when location changes and scroll to top
   useEffect(() => {
     setActivePage(getActivePageFromPath(location.pathname));
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   // Navigation links
@@ -75,17 +76,19 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <img src={LogoImg} alt="" className="h-12" />
-            <span className="text-2xl font-bold text-gray-800">
-              NextGen<span className="text-blue-600">Websites</span>
-            </span>
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              className="flex items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img src={LogoImg} alt="" className="h-12" />
+              <span className="text-2xl font-bold text-gray-800">
+                NextGen<span className="text-blue-600">Websites</span>
+              </span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
